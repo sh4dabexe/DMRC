@@ -9,7 +9,8 @@ import {
   Clock, 
   Sparkles,
   Check,
-  ChevronDown
+  ChevronDown,
+  X
 } from 'lucide-react';
 import { Station } from '@/engine/types';
 
@@ -25,8 +26,8 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
   stations,
   onSearch,
   isLoading,
-  initialFrom = 'welcome',
-  initialTo = 'dwarka'
+  initialFrom = '',
+  initialTo = ''
 }) => {
   const [fromStation, setFromStation] = useState<Station | null>(null);
   const [toStation, setToStation] = useState<Station | null>(null);
@@ -42,15 +43,32 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
 
   const fromRef = useRef<HTMLDivElement>(null);
   const toRef = useRef<HTMLDivElement>(null);
+  const fromInputRef = useRef<HTMLInputElement>(null);
+  const toInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (stations.length > 0) {
-      const defaultFrom = stations.find(s => s.id === initialFrom) || stations[0];
-      const defaultTo = stations.find(s => s.id === initialTo) || stations[1];
-      setFromStation(defaultFrom);
-      setFromQuery(defaultFrom.name);
-      setToStation(defaultTo);
-      setToQuery(defaultTo.name);
+      if (initialFrom) {
+        const foundFrom = stations.find(s => s.id === initialFrom);
+        if (foundFrom) {
+          setFromStation(foundFrom);
+          setFromQuery(foundFrom.name);
+        }
+      } else {
+        setFromStation(null);
+        setFromQuery('');
+      }
+
+      if (initialTo) {
+        const foundTo = stations.find(s => s.id === initialTo);
+        if (foundTo) {
+          setToStation(foundTo);
+          setToQuery(foundTo.name);
+        }
+      } else {
+        setToStation(null);
+        setToQuery('');
+      }
     }
   }, [stations, initialFrom, initialTo]);
 
@@ -83,15 +101,19 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
     onSearch(fromStation.id, toStation.id, { isSunday, time });
   };
 
-  const filteredFrom = stations.filter(s => 
-    s.name.toLowerCase().includes(fromQuery.toLowerCase()) || 
-    s.aliases.some(a => a.includes(fromQuery.toLowerCase()))
-  ).slice(0, 8);
+  const filteredFrom = fromQuery.trim()
+    ? stations.filter(s => 
+        s.name.toLowerCase().includes(fromQuery.toLowerCase()) || 
+        s.aliases.some(a => a.includes(fromQuery.toLowerCase()))
+      ).slice(0, 8)
+    : stations.filter(s => s.lines.length > 1).slice(0, 8);
 
-  const filteredTo = stations.filter(s => 
-    s.name.toLowerCase().includes(toQuery.toLowerCase()) || 
-    s.aliases.some(a => a.includes(toQuery.toLowerCase()))
-  ).slice(0, 8);
+  const filteredTo = toQuery.trim()
+    ? stations.filter(s => 
+        s.name.toLowerCase().includes(toQuery.toLowerCase()) || 
+        s.aliases.some(a => a.includes(toQuery.toLowerCase()))
+      ).slice(0, 8)
+    : stations.filter(s => s.lines.length > 1).slice(0, 8);
 
   const popularRoutes = [
     { label: "Welcome → Dwarka", from: "welcome", to: "dwarka" },
@@ -116,31 +138,63 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
       <form onSubmit={handleFindRoutes} className="space-y-4">
         {/* Stations Input Section with Swap */}
         <div className="relative space-y-2">
-          {/* Source Input */}
+          {/* Departure Input */}
           <div ref={fromRef} className="relative">
             <label className="text-[11px] font-bold uppercase text-neutral-500 tracking-wider mb-1 block">
-              Origin Station
+              Departure Station
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-600">
                 <MapPin className="w-4 h-4" />
               </div>
               <input
+                ref={fromInputRef}
                 type="text"
                 value={fromQuery}
                 onChange={(e) => {
                   setFromQuery(e.target.value);
+                  const matched = stations.find(s => s.name.toLowerCase() === e.target.value.toLowerCase().trim());
+                  setFromStation(matched || null);
                   setShowFromMenu(true);
                 }}
-                onFocus={() => setShowFromMenu(true)}
-                placeholder="Search departure station..."
-                className="w-full pl-10 pr-4 py-2.5 bg-neutral-50 hover:bg-neutral-100/70 focus:bg-white text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                onFocus={(e) => {
+                  e.currentTarget.select();
+                  setShowFromMenu(true);
+                }}
+                onClick={(e) => {
+                  e.currentTarget.select();
+                  setShowFromMenu(true);
+                }}
+                placeholder="Departure station (e.g. Welcome)"
+                className="w-full pl-10 pr-9 py-2.5 bg-neutral-50 hover:bg-neutral-100/70 focus:bg-white text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
               />
+              {fromQuery && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFromQuery('');
+                    setFromStation(null);
+                    setShowFromMenu(true);
+                    fromInputRef.current?.focus();
+                  }}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-neutral-400 hover:text-neutral-700 transition-colors"
+                  aria-label="Clear departure station"
+                  title="Clear"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
             {/* From Dropdown Autocomplete */}
             {showFromMenu && filteredFrom.length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-1.5 bg-white border border-neutral-200 rounded-xl shadow-lg z-50 overflow-hidden max-h-60 overflow-y-auto">
+                {!fromQuery.trim() && (
+                  <div className="px-3.5 py-1.5 bg-neutral-50 border-b border-neutral-100 text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                    Suggested Interchange Hubs
+                  </div>
+                )}
                 {filteredFrom.map((st) => (
                   <button
                     key={st.id}
@@ -191,21 +245,53 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
                 <MapPin className="w-4 h-4" />
               </div>
               <input
+                ref={toInputRef}
                 type="text"
                 value={toQuery}
                 onChange={(e) => {
                   setToQuery(e.target.value);
+                  const matched = stations.find(s => s.name.toLowerCase() === e.target.value.toLowerCase().trim());
+                  setToStation(matched || null);
                   setShowToMenu(true);
                 }}
-                onFocus={() => setShowToMenu(true)}
-                placeholder="Search destination station..."
-                className="w-full pl-10 pr-4 py-2.5 bg-neutral-50 hover:bg-neutral-100/70 focus:bg-white text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                onFocus={(e) => {
+                  e.currentTarget.select();
+                  setShowToMenu(true);
+                }}
+                onClick={(e) => {
+                  e.currentTarget.select();
+                  setShowToMenu(true);
+                }}
+                placeholder="Destination station (e.g. Dwarka)"
+                className="w-full pl-10 pr-9 py-2.5 bg-neutral-50 hover:bg-neutral-100/70 focus:bg-white text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
               />
+              {toQuery && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setToQuery('');
+                    setToStation(null);
+                    setShowToMenu(true);
+                    toInputRef.current?.focus();
+                  }}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-neutral-400 hover:text-neutral-700 transition-colors"
+                  aria-label="Clear destination station"
+                  title="Clear"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
             {/* To Dropdown Autocomplete */}
             {showToMenu && filteredTo.length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-1.5 bg-white border border-neutral-200 rounded-xl shadow-lg z-50 overflow-hidden max-h-60 overflow-y-auto">
+                {!toQuery.trim() && (
+                  <div className="px-3.5 py-1.5 bg-neutral-50 border-b border-neutral-100 text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                    Suggested Interchange Hubs
+                  </div>
+                )}
                 {filteredTo.map((st) => (
                   <button
                     key={st.id}
@@ -285,7 +371,7 @@ export const JourneyPlanner: React.FC<JourneyPlannerProps> = ({
 
         {fromStation && toStation && fromStation.id === toStation.id && (
           <p className="text-xs text-amber-600 text-center font-medium">
-            Origin and destination stations are the same. Please choose different stations.
+            Departure and destination stations are the same. Please choose different stations.
           </p>
         )}
       </form>

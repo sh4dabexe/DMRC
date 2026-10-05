@@ -35,6 +35,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [initialFrom, setInitialFrom] = useState('');
+  const [initialTo, setInitialTo] = useState('');
 
   // Modals
   const [showFareModal, setShowFareModal] = useState(false);
@@ -54,11 +56,15 @@ export default function Home() {
           setStations(data.stations);
           // Check query parameters for shareable links
           const params = new URLSearchParams(window.location.search);
-          const urlFrom = params.get('from') || 'welcome';
-          const urlTo = params.get('to') || 'dwarka';
+          const urlFrom = params.get('from');
+          const urlTo = params.get('to');
           const urlSun = params.get('isSunday') === 'true';
           const urlTime = params.get('time') || '10:00';
-          handleSearch(urlFrom, urlTo, { isSunday: urlSun, time: urlTime });
+          if (urlFrom && urlTo) {
+            setInitialFrom(urlFrom);
+            setInitialTo(urlTo);
+            handleSearch(urlFrom, urlTo, { isSunday: urlSun, time: urlTime });
+          }
         }
       })
       .catch(err => {
@@ -76,6 +82,8 @@ export default function Home() {
   }, []);
 
   const handleSearch = async (fromId: string, toId: string, options: { isSunday: boolean; time: string }) => {
+    setInitialFrom(fromId);
+    setInitialTo(toId);
     setIsLoading(true);
     setErrorMsg(null);
     try {
@@ -175,11 +183,28 @@ export default function Home() {
                   stations={stations}
                   onSearch={handleSearch}
                   isLoading={isLoading}
+                  initialFrom={initialFrom}
+                  initialTo={initialTo}
                 />
 
                 {errorMsg && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-xs text-red-700 font-semibold">
                     {errorMsg}
+                  </div>
+                )}
+
+                {/* Empty State before search */}
+                {!queryResult && !isLoading && (
+                  <div className="bg-white rounded-2xl border border-[#E4E5E7] p-8 text-center shadow-xs space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-neutral-100 flex items-center justify-center mx-auto text-neutral-500">
+                      <Navigation className="w-6 h-6 text-neutral-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-neutral-900">Choose Departure & Destination</h4>
+                      <p className="text-xs text-neutral-500 max-w-sm mx-auto mt-1">
+                        Select your departure station and destination station above or pick a popular commute to compare multi-route options and official fares.
+                      </p>
+                    </div>
                   </div>
                 )}
 
@@ -274,9 +299,15 @@ export default function Home() {
                     selectedRoute={selectedRoute}
                     onSelectStation={(st, type) => {
                       if (type === 'from') {
-                        handleSearch(st.id, queryResult?.to.id || 'dwarka', { isSunday: false, time: '10:00' });
+                        setInitialFrom(st.id);
+                        if (initialTo) {
+                          handleSearch(st.id, initialTo, { isSunday: false, time: '10:00' });
+                        }
                       } else {
-                        handleSearch(queryResult?.from.id || 'welcome', st.id, { isSunday: false, time: '10:00' });
+                        setInitialTo(st.id);
+                        if (initialFrom) {
+                          handleSearch(initialFrom, st.id, { isSunday: false, time: '10:00' });
+                        }
                       }
                     }}
                   />
