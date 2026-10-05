@@ -17,6 +17,7 @@ export interface Line {
   operator: string;
   active: boolean;
   description: string;
+  stationIds?: string[];
 }
 
 export interface Connection {

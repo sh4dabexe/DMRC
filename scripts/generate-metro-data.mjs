@@ -626,7 +626,11 @@ const metadata = {
 };
 
 // Write files to src/data
-fs.writeFileSync(path.join(dataDir, 'lines.json'), JSON.stringify(lines, null, 2));
+const linesWithStations = lines.map(line => ({
+  ...line,
+  stationIds: rawLinesData[line.id] ? rawLinesData[line.id].map(s => slugify(s.name)) : []
+}));
+fs.writeFileSync(path.join(dataDir, 'lines.json'), JSON.stringify(linesWithStations, null, 2));
 fs.writeFileSync(path.join(dataDir, 'stations.json'), JSON.stringify(stations, null, 2));
 fs.writeFileSync(path.join(dataDir, 'connections.json'), JSON.stringify(connections, null, 2));
 fs.writeFileSync(path.join(dataDir, 'interchanges.json'), JSON.stringify(interchanges, null, 2));
