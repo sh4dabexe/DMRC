@@ -119,32 +119,61 @@ export const FareCalculatorModal: React.FC<FareCalculatorModalProps> = ({ isOpen
         </div>
 
         {/* Official Slabs Table */}
-        <div className="space-y-1.5">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-            Official DMRC Fare Matrix
-          </span>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
+              Distance and Day-Based Fare Slabs
+            </span>
+            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              Minimum Distance Rule
+            </span>
+          </div>
           <div className="border border-neutral-200 rounded-xl overflow-hidden">
             <table className="w-full text-xs text-left">
-              <thead className="bg-neutral-100 text-neutral-600 font-semibold text-[11px]">
+              <thead className="bg-neutral-100 text-neutral-700 font-semibold text-[11px]">
                 <tr>
-                  <th className="py-1.5 px-3">Distance Slab</th>
-                  <th className="py-1.5 px-3">Mon-Sat Token</th>
-                  <th className="py-1.5 px-3">Sunday / Holiday</th>
+                  <th className="py-2 px-3">Distance Slab</th>
+                  <th className="py-2 px-3">Monday to Saturday Fare</th>
+                  <th className="py-2 px-3">Sunday & National Holiday Fare</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100">
-                {faresData.slabs.map((slab, i) => (
-                  <tr key={i} className="hover:bg-neutral-50/50">
-                    <td className="py-1.5 px-3 font-medium text-neutral-800">
-                      {slab.minKm}–{slab.maxKm === 999 ? '32+' : slab.maxKm} km
-                    </td>
-                    <td className="py-1.5 px-3 font-bold text-neutral-900">₹{slab.weekdayFare}</td>
-                    <td className="py-1.5 px-3 text-emerald-700 font-semibold">₹{slab.sundayFare}</td>
-                  </tr>
-                ))}
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">0 to 2 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹11</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹11</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">2 to 5 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹21</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹11</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">5 to 12 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹32</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹21</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">12 to 21 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹43</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹32</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">21 to 32 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹54</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹43</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="py-2 px-3 font-medium text-neutral-800">Beyond 32 km</td>
+                  <td className="py-2 px-3 font-bold text-neutral-900">₹64</td>
+                  <td className="py-2 px-3 text-emerald-700 font-semibold">₹54</td>
+                </tr>
               </tbody>
             </table>
           </div>
+          <p className="text-[11px] text-neutral-500 italic">
+            * DMRC Rule: Journey fare is always calculated on the basis of minimum distance between stations.
+          </p>
         </div>
       </div>
     </div>

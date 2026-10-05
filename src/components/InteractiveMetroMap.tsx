@@ -33,9 +33,9 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   // View Mode: 'vector' (SVG interactive route map) vs 'pdf' (Official DMRC Schematic Map from Metro.pdf)
   const [viewMode, setViewMode] = useState<'vector' | 'pdf'>('vector');
 
-  // Vector Map Pan & Zoom
-  const [scale, setScale] = useState(0.85);
-  const [pan, setPan] = useState({ x: -100, y: -150 });
+  // Vector Map Pan & Zoom - Centered and slightly zoomed in by default
+  const [scale, setScale] = useState(1.25);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
@@ -86,7 +86,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   // Handle Zoom In / Out / Reset
   const handleZoom = (delta: number) => {
     if (viewMode === 'vector') {
-      setScale(prev => Math.max(0.35, Math.min(2.8, prev + delta)));
+      setScale(prev => Math.max(0.45, Math.min(3.2, prev + delta)));
     } else {
       setPdfScale(prev => Math.max(0.5, Math.min(4.0, prev + delta)));
     }
@@ -94,15 +94,15 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
 
   const handleReset = () => {
     if (viewMode === 'vector') {
-      setScale(0.85);
-      setPan({ x: -100, y: -150 });
+      setScale(1.25);
+      setPan({ x: 0, y: 0 });
     } else {
       setPdfScale(1);
       setPdfPan({ x: 0, y: 0 });
     }
   };
 
-  // Fit route into viewport when selectedRoute changes in vector mode
+  // Fit route into viewport smoothly centered when selectedRoute changes in vector mode
   useEffect(() => {
     if (viewMode === 'vector' && selectedRoute && selectedRoute.stationSequence.length > 0) {
       const xs = selectedRoute.stationSequence.map(s => s.x);
@@ -115,11 +115,24 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
       const midX = (minX + maxX) / 2;
       const midY = (minY + maxY) / 2;
 
+      // Network center reference is at (625, 650)
+      const netCenterX = 625;
+      const netCenterY = 650;
+
+      const container = containerRef.current;
+      const width = container?.clientWidth || 500;
+      const height = container?.clientHeight || 550;
+      const coordScale = Math.min(width / 1350, height / 1200);
+
+      const targetScale = 1.35;
+      const dx = -(midX - netCenterX) * coordScale * targetScale;
+      const dy = -(midY - netCenterY) * coordScale * targetScale;
+
       setPan({
-        x: 320 - midX * 0.85,
-        y: 240 - midY * 0.85
+        x: Math.round(dx),
+        y: Math.round(dy)
       });
-      setScale(0.85);
+      setScale(targetScale);
     }
   }, [selectedRoute, viewMode]);
 
@@ -331,11 +344,11 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
           >
             <svg
               ref={svgRef}
-              viewBox="-200 -100 1600 1400"
+              viewBox="-50 50 1350 1200"
               className="w-full h-full"
               style={{
                 transform: `translate(${pan.x}px, ${pan.y}px) scale(${scale})`,
-                transformOrigin: '0 0',
+                transformOrigin: 'center center',
                 transition: isDragging ? 'none' : 'transform 0.15s ease-out'
               }}
             >
@@ -350,7 +363,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                 <circle cx="20" cy="20" r="1" fill="#E5E7EB" />
               </pattern>
-              <rect x="-300" y="-200" width="2000" height="1800" fill="url(#grid)" />
+              <rect x="-600" y="-400" width="2800" height="2600" fill="url(#grid)" />
 
               {/* Yamuna River Stylized Line */}
               <path

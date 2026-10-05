@@ -46,12 +46,13 @@ export function calculateFare(
     if (regularKm > 0) {
       // Combined journey: regular network fare + airport express fare
       let regularToken = 64;
-      for (const slab of faresData.slabs) {
-        if (regularKm >= slab.minKm && regularKm < slab.maxKm) {
-          regularToken = isSunday ? slab.sundayFare : slab.weekdayFare;
-          break;
-        }
-      }
+      if (regularKm <= 2) regularToken = 11;
+      else if (regularKm <= 5) regularToken = isSunday ? 11 : 21;
+      else if (regularKm <= 12) regularToken = isSunday ? 21 : 32;
+      else if (regularKm <= 21) regularToken = isSunday ? 32 : 43;
+      else if (regularKm <= 32) regularToken = isSunday ? 43 : 54;
+      else regularToken = isSunday ? 54 : 64;
+
       tokenFare = regularToken + airportToken;
       slabApplied = `Regular ${regularKm.toFixed(1)}km (₹${regularToken}) + Airport ${targetAirportKm.toFixed(1)}km (₹${airportToken})`;
     } else {
@@ -61,16 +62,25 @@ export function calculateFare(
     }
   } else {
     // Pure Regular Metro journey:
-    // Fare is FIXED between origin and destination based on the shortest network distance slab!
-    tokenFare = 64;
-    slabApplied = "> 32 km";
-
-    for (const slab of faresData.slabs) {
-      if (distanceKm >= slab.minKm && distanceKm < slab.maxKm) {
-        tokenFare = isSunday ? slab.sundayFare : slab.weekdayFare;
-        slabApplied = `${slab.minKm}-${slab.maxKm === 999 ? '32+' : slab.maxKm} km`;
-        break;
-      }
+    // Core DMRC Rule: Always calculate price on the basis of minimum distance
+    if (distanceKm <= 2) {
+      tokenFare = 11;
+      slabApplied = "0 to 2 km";
+    } else if (distanceKm <= 5) {
+      tokenFare = isSunday ? 11 : 21;
+      slabApplied = "2 to 5 km";
+    } else if (distanceKm <= 12) {
+      tokenFare = isSunday ? 21 : 32;
+      slabApplied = "5 to 12 km";
+    } else if (distanceKm <= 21) {
+      tokenFare = isSunday ? 32 : 43;
+      slabApplied = "12 to 21 km";
+    } else if (distanceKm <= 32) {
+      tokenFare = isSunday ? 43 : 54;
+      slabApplied = "21 to 32 km";
+    } else {
+      tokenFare = isSunday ? 54 : 64;
+      slabApplied = "Beyond 32 km";
     }
   }
 
