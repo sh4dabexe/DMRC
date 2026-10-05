@@ -51,6 +51,19 @@ for (const route of multiResult.routes) {
   }
 }
 
+// Verify that all regular routes (excluding orange line exception) have identical fixed fare
+const regularRoutes = multiResult.routes.filter(r => !r.linesUsed.includes('airport'));
+if (regularRoutes.length > 1) {
+  const baseFare = regularRoutes[0].fare.tokenFare;
+  for (const r of regularRoutes) {
+    if (r.fare.tokenFare !== baseFare) {
+      console.error(`FAIL: Inconsistent regular fare! Route ${r.routeNumber} has ₹${r.fare.tokenFare} != base ₹${baseFare}`);
+      process.exit(1);
+    }
+  }
+  console.log(`PASS: Verified fixed regular fare (₹${baseFare}) across all ${regularRoutes.length} alternative regular routes.`);
+}
+
 // Verify strict ranking:
 // 1. stations ASC
 // 2. interchanges ASC

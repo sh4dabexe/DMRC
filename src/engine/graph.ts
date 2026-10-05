@@ -125,6 +125,38 @@ export class MetroGraph {
   }
 
   /**
+   * Dijkstra to find minimum track distance between fromId and toId.
+   */
+  public findShortestDistance(fromId: string, toId: string, excludeLines: string[] = []): number | null {
+    if (fromId === toId) return 0;
+    if (!this.stations.has(fromId) || !this.stations.has(toId)) return null;
+
+    const distances = new Map<string, number>();
+    const pq: Array<{ id: string; dist: number }> = [{ id: fromId, dist: 0 }];
+    distances.set(fromId, 0);
+
+    while (pq.length > 0) {
+      pq.sort((a, b) => a.dist - b.dist);
+      const { id, dist } = pq.shift()!;
+
+      if (id === toId) return dist;
+      if (dist > (distances.get(id) ?? Infinity)) continue;
+
+      const edges = this.adjacency.get(id) || [];
+      for (const edge of edges) {
+        if (excludeLines.includes(edge.line)) continue;
+        const nextDist = dist + edge.distance_km;
+        if (nextDist < (distances.get(edge.to) ?? Infinity)) {
+          distances.set(edge.to, nextDist);
+          pq.push({ id: edge.to, dist: nextDist });
+        }
+      }
+    }
+
+    return distances.get(toId) ?? null;
+  }
+
+  /**
    * Generates candidate routes within the [N, N + 10] window.
    */
   public findMultiRoutes(
@@ -167,6 +199,13 @@ export class MetroGraph {
     }
 
     const windowMaxStations = N + 10;
+
+    // Fixed Station-to-Station Distance for DMRC Regular Network:
+    // Fare between any two given stations is strictly fixed based on the shortest regular network distance.
+    const shortestRegularDist = 
+      this.findShortestDistance(fromId, toId, ['airport']) ?? 
+      this.findShortestDistance(fromId, toId) ?? 
+      0;
 
     // Constrained DFS/Branch-and-Bound to discover distinct candidate paths
     interface PathCandidate {
@@ -392,11 +431,26 @@ export class MetroGraph {
       // Unique lines used
       const linesUsed = Array.from(new Set(cand.lines));
 
-      // Calculate Fare
-      const fare = calculateFare(cand.totalDistance, {
-        isSundayOrHoliday: options.isSundayOrHoliday,
-        departureTime: options.departureTime
-      });
+      // Check if candidate route utilizes Orange Line (Airport Express)
+      let airportDistance = 0;
+      for (let i = 0; i < cand.lines.length; i++) {
+        if (cand.lines[i] === 'airport') {
+          airportDistance += cand.edgeDistances[i];
+        }
+      }
+
+      // Calculate Fare:
+      // Regular metro journeys have a FIXED station-to-station fare based on shortest distance.
+      // Exception: Orange Line (Airport Express) routes calculate their specific airport premium fare.
+      const fare = calculateFare(
+        airportDistance > 0 ? cand.totalDistance : shortestRegularDist,
+        {
+          isSundayOrHoliday: options.isSundayOrHoliday,
+          departureTime: options.departureTime,
+          isAirportExpress: airportDistance > 0,
+          airportDistanceKm: airportDistance
+        }
+      );
 
       // Calculate Timing
       const timing = calculateTiming(
