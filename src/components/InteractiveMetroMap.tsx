@@ -27,6 +27,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   onSelectStation
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const pdfContainerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   // View Mode: 'vector' (SVG interactive route map) vs 'pdf' (Official DMRC Schematic Map from Metro.pdf)
@@ -141,11 +142,40 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
     setIsDragging(false);
   };
 
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    const zoomDelta = e.deltaY < 0 ? 0.12 : -0.12;
-    handleZoom(zoomDelta);
-  };
+  // Non-passive wheel listeners to zoom map without scrolling the outer page
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || viewMode !== 'vector') return;
+
+    const onVectorWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const zoomDelta = e.deltaY < 0 ? 0.12 : -0.12;
+      setScale(prev => Math.max(0.35, Math.min(2.8, prev + zoomDelta)));
+    };
+
+    el.addEventListener('wheel', onVectorWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', onVectorWheel);
+    };
+  }, [viewMode]);
+
+  useEffect(() => {
+    const el = pdfContainerRef.current;
+    if (!el || viewMode !== 'pdf') return;
+
+    const onPdfWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const zoomDelta = e.deltaY < 0 ? 0.18 : -0.18;
+      setPdfScale(prev => Math.max(0.5, Math.min(4.0, prev + zoomDelta)));
+    };
+
+    el.addEventListener('wheel', onPdfWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', onPdfWheel);
+    };
+  }, [viewMode]);
 
   // Mouse pan handlers for PDF Map
   const handlePdfMouseDown = (e: React.MouseEvent) => {
@@ -296,8 +326,8 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onWheel={handleWheel}
-            className={`w-full h-full flex-1 cursor-${isDragging ? 'grabbing' : 'grab'} overflow-hidden relative`}
+            className={`w-full h-full flex-1 cursor-${isDragging ? 'grabbing' : 'grab'} overflow-hidden relative overscroll-contain touch-none`}
+            style={{ overscrollBehavior: 'contain', touchAction: 'none' }}
           >
             <svg
               ref={svgRef}
@@ -516,15 +546,12 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
       {/* VIEW MODE 2: Official DMRC Network Map (Metro.pdf) */}
       {viewMode === 'pdf' && (
         <div
+          ref={pdfContainerRef}
           onMouseDown={handlePdfMouseDown}
           onMouseMove={handlePdfMouseMove}
           onMouseUp={handlePdfMouseUp}
-          onWheel={(e) => {
-            e.preventDefault();
-            const delta = e.deltaY < 0 ? 0.15 : -0.15;
-            handleZoom(delta);
-          }}
-          className={`w-full h-full flex-1 cursor-${isPdfDragging ? 'grabbing' : 'grab'} overflow-hidden relative bg-neutral-100 flex items-center justify-center`}
+          className={`w-full h-full flex-1 cursor-${isPdfDragging ? 'grabbing' : 'grab'} overflow-hidden relative bg-neutral-100 flex items-center justify-center overscroll-contain touch-none`}
+          style={{ overscrollBehavior: 'contain', touchAction: 'none' }}
         >
           <div
             className="w-full h-full flex items-center justify-center transition-transform duration-100"
