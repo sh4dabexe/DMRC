@@ -1,0 +1,3683 @@
+[
+  {
+    "id": "rithala",
+    "name": "Rithala",
+    "aliases": [
+      "rithala"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 260,
+    "y": 220,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rohini-west",
+    "name": "Rohini West",
+    "aliases": [
+      "rohini west"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 285,
+    "y": 235,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rohini-east",
+    "name": "Rohini East",
+    "aliases": [
+      "rohini east"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 310,
+    "y": 250,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "pitampura",
+    "name": "Pitampura",
+    "aliases": [
+      "pitampura"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 335,
+    "y": 265,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kohat-enclave",
+    "name": "Kohat Enclave",
+    "aliases": [
+      "kohat enclave"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 360,
+    "y": 280,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "netaji-subhash-place",
+    "name": "Netaji Subhash Place",
+    "aliases": [
+      "netaji subhash place"
+    ],
+    "lines": [
+      "red",
+      "pink"
+    ],
+    "x": 390,
+    "y": 300,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "keshav-puram",
+    "name": "Keshav Puram",
+    "aliases": [
+      "keshav puram"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 410,
+    "y": 315,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kanhaiya-nagar",
+    "name": "Kanhaiya Nagar",
+    "aliases": [
+      "kanhaiya nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 430,
+    "y": 330,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "inderlok",
+    "name": "Inderlok",
+    "aliases": [
+      "inderlok"
+    ],
+    "lines": [
+      "red",
+      "green"
+    ],
+    "x": 450,
+    "y": 350,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shastri-nagar",
+    "name": "Shastri Nagar",
+    "aliases": [
+      "shastri nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 470,
+    "y": 365,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "pratap-nagar",
+    "name": "Pratap Nagar",
+    "aliases": [
+      "pratap nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 490,
+    "y": 380,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "pul-bangash",
+    "name": "Pul Bangash",
+    "aliases": [
+      "pul bangash"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 510,
+    "y": 390,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tis-hazari",
+    "name": "Tis Hazari",
+    "aliases": [
+      "tis hazari"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 530,
+    "y": 400,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kashmere-gate",
+    "name": "Kashmere Gate",
+    "aliases": [
+      "kashmere gate"
+    ],
+    "lines": [
+      "red",
+      "yellow",
+      "violet"
+    ],
+    "x": 560,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shastri-park",
+    "name": "Shastri Park",
+    "aliases": [
+      "shastri park"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 610,
+    "y": 405,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "seelampur",
+    "name": "Seelampur",
+    "aliases": [
+      "seelampur"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 645,
+    "y": 405,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "welcome",
+    "name": "Welcome",
+    "aliases": [
+      "welcome"
+    ],
+    "lines": [
+      "red",
+      "pink"
+    ],
+    "x": 680,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shahdara",
+    "name": "Shahdara",
+    "aliases": [
+      "shahdara"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 720,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mansarovar-park",
+    "name": "Mansarovar Park",
+    "aliases": [
+      "mansarovar park"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 750,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jhilmil",
+    "name": "Jhilmil",
+    "aliases": [
+      "jhilmil"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 780,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dilshad-garden",
+    "name": "Dilshad Garden",
+    "aliases": [
+      "dilshad garden"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 810,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shaheed-nagar",
+    "name": "Shaheed Nagar",
+    "aliases": [
+      "shaheed nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 835,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "raj-bagh",
+    "name": "Raj Bagh",
+    "aliases": [
+      "raj bagh"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 860,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "major-mohit-sharma-rajendra-nagar",
+    "name": "Major Mohit Sharma Rajendra Nagar",
+    "aliases": [
+      "major mohit sharma rajendra nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 885,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shyam-park",
+    "name": "Shyam Park",
+    "aliases": [
+      "shyam park"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 910,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mohan-nagar",
+    "name": "Mohan Nagar",
+    "aliases": [
+      "mohan nagar"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 935,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "arthala",
+    "name": "Arthala",
+    "aliases": [
+      "arthala"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 955,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "hindon-river",
+    "name": "Hindon River",
+    "aliases": [
+      "hindon river"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 975,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shaheed-sthal-new-bus-adda",
+    "name": "Shaheed Sthal (New Bus Adda)",
+    "aliases": [
+      "shaheed sthal (new bus adda)"
+    ],
+    "lines": [
+      "red"
+    ],
+    "x": 1000,
+    "y": 410,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "samaypur-badli",
+    "name": "Samaypur Badli",
+    "aliases": [
+      "samaypur badli"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 420,
+    "y": 140,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rohini-sector-18-19",
+    "name": "Rohini Sector 18-19",
+    "aliases": [
+      "rohini sector 18-19"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 430,
+    "y": 170,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "haiderpur-badli-mor",
+    "name": "Haiderpur Badli Mor",
+    "aliases": [
+      "haiderpur badli mor"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 440,
+    "y": 200,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jahangirpuri",
+    "name": "Jahangirpuri",
+    "aliases": [
+      "jahangirpuri"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 450,
+    "y": 230,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "adarsh-nagar",
+    "name": "Adarsh Nagar",
+    "aliases": [
+      "adarsh nagar"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 460,
+    "y": 260,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "azadpur",
+    "name": "Azadpur",
+    "aliases": [
+      "azadpur"
+    ],
+    "lines": [
+      "yellow",
+      "pink"
+    ],
+    "x": 470,
+    "y": 290,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "model-town",
+    "name": "Model Town",
+    "aliases": [
+      "model town"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 485,
+    "y": 320,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "guru-tegh-bahadur-nagar",
+    "name": "Guru Tegh Bahadur Nagar",
+    "aliases": [
+      "guru tegh bahadur nagar"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 505,
+    "y": 345,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "vishwavidyalaya",
+    "name": "Vishwavidyalaya",
+    "aliases": [
+      "vishwavidyalaya"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 520,
+    "y": 365,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "vidhan-sabha",
+    "name": "Vidhan Sabha",
+    "aliases": [
+      "vidhan sabha"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 535,
+    "y": 380,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "civil-lines",
+    "name": "Civil Lines",
+    "aliases": [
+      "civil lines"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 548,
+    "y": 395,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "chandni-chowk",
+    "name": "Chandni Chowk",
+    "aliases": [
+      "chandni chowk"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 555,
+    "y": 440,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "chawri-bazar",
+    "name": "Chawri Bazar",
+    "aliases": [
+      "chawri bazar"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 550,
+    "y": 465,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "new-delhi",
+    "name": "New Delhi",
+    "aliases": [
+      "new delhi"
+    ],
+    "lines": [
+      "yellow",
+      "airport"
+    ],
+    "x": 545,
+    "y": 490,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rajiv-chowk",
+    "name": "Rajiv Chowk",
+    "aliases": [
+      "rajiv chowk"
+    ],
+    "lines": [
+      "yellow",
+      "blue"
+    ],
+    "x": 540,
+    "y": 520,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "patel-chowk",
+    "name": "Patel Chowk",
+    "aliases": [
+      "patel chowk"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 535,
+    "y": 550,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "central-secretariat",
+    "name": "Central Secretariat",
+    "aliases": [
+      "central secretariat"
+    ],
+    "lines": [
+      "yellow",
+      "violet"
+    ],
+    "x": 530,
+    "y": 580,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "udyog-bhawan",
+    "name": "Udyog Bhawan",
+    "aliases": [
+      "udyog bhawan"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 525,
+    "y": 605,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "lok-kalyan-marg",
+    "name": "Lok Kalyan Marg",
+    "aliases": [
+      "lok kalyan marg"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 520,
+    "y": 630,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jor-bagh",
+    "name": "Jor Bagh",
+    "aliases": [
+      "jor bagh"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 515,
+    "y": 655,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dilli-haat-ina",
+    "name": "Dilli Haat - INA",
+    "aliases": [
+      "dilli haat - ina"
+    ],
+    "lines": [
+      "yellow",
+      "pink"
+    ],
+    "x": 510,
+    "y": 685,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "aiims",
+    "name": "AIIMS",
+    "aliases": [
+      "aiims"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 505,
+    "y": 710,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "green-park",
+    "name": "Green Park",
+    "aliases": [
+      "green park"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 500,
+    "y": 735,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "hauz-khas",
+    "name": "Hauz Khas",
+    "aliases": [
+      "hauz khas"
+    ],
+    "lines": [
+      "yellow",
+      "magenta"
+    ],
+    "x": 495,
+    "y": 765,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "malviya-nagar",
+    "name": "Malviya Nagar",
+    "aliases": [
+      "malviya nagar"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 490,
+    "y": 795,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "saket",
+    "name": "Saket",
+    "aliases": [
+      "saket"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 485,
+    "y": 825,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "qutab-minar",
+    "name": "Qutab Minar",
+    "aliases": [
+      "qutab minar"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 475,
+    "y": 855,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "chhatarpur",
+    "name": "Chhatarpur",
+    "aliases": [
+      "chhatarpur"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 460,
+    "y": 885,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sultanpur",
+    "name": "Sultanpur",
+    "aliases": [
+      "sultanpur"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 445,
+    "y": 915,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ghitorni",
+    "name": "Ghitorni",
+    "aliases": [
+      "ghitorni"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 430,
+    "y": 940,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "arjan-garh",
+    "name": "Arjan Garh",
+    "aliases": [
+      "arjan garh"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 415,
+    "y": 965,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "guru-dronacharya",
+    "name": "Guru Dronacharya",
+    "aliases": [
+      "guru dronacharya"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 400,
+    "y": 990,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sikanderpur",
+    "name": "Sikanderpur",
+    "aliases": [
+      "sikanderpur"
+    ],
+    "lines": [
+      "yellow",
+      "rapid-metro"
+    ],
+    "x": 385,
+    "y": 1015,
+    "zone": "gurugram",
+    "active": true
+  },
+  {
+    "id": "mg-road",
+    "name": "MG Road",
+    "aliases": [
+      "mg road"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 370,
+    "y": 1040,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "iffco-chowk",
+    "name": "IFFCO Chowk",
+    "aliases": [
+      "iffco chowk"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 355,
+    "y": 1065,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "millennium-city-centre-gurugram",
+    "name": "Millennium City Centre Gurugram",
+    "aliases": [
+      "millennium city centre gurugram"
+    ],
+    "lines": [
+      "yellow"
+    ],
+    "x": 340,
+    "y": 1090,
+    "zone": "gurugram",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-21",
+    "name": "Dwarka Sector 21",
+    "aliases": [
+      "dwarka sector 21"
+    ],
+    "lines": [
+      "blue",
+      "airport"
+    ],
+    "x": 120,
+    "y": 720,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-8",
+    "name": "Dwarka Sector 8",
+    "aliases": [
+      "dwarka sector 8"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 135,
+    "y": 700,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-9",
+    "name": "Dwarka Sector 9",
+    "aliases": [
+      "dwarka sector 9"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 150,
+    "y": 680,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-10",
+    "name": "Dwarka Sector 10",
+    "aliases": [
+      "dwarka sector 10"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 165,
+    "y": 660,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-11",
+    "name": "Dwarka Sector 11",
+    "aliases": [
+      "dwarka sector 11"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 180,
+    "y": 645,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-12",
+    "name": "Dwarka Sector 12",
+    "aliases": [
+      "dwarka sector 12"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 195,
+    "y": 630,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-13",
+    "name": "Dwarka Sector 13",
+    "aliases": [
+      "dwarka sector 13"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 210,
+    "y": 615,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-sector-14",
+    "name": "Dwarka Sector 14",
+    "aliases": [
+      "dwarka sector 14"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 225,
+    "y": 600,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka",
+    "name": "Dwarka",
+    "aliases": [
+      "dwarka"
+    ],
+    "lines": [
+      "blue",
+      "grey"
+    ],
+    "x": 245,
+    "y": 585,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dwarka-mor",
+    "name": "Dwarka Mor",
+    "aliases": [
+      "dwarka mor"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 265,
+    "y": 575,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nawada",
+    "name": "Nawada",
+    "aliases": [
+      "nawada"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 285,
+    "y": 565,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "uttam-nagar-west",
+    "name": "Uttam Nagar West",
+    "aliases": [
+      "uttam nagar west"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 305,
+    "y": 555,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "uttam-nagar-east",
+    "name": "Uttam Nagar East",
+    "aliases": [
+      "uttam nagar east"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 325,
+    "y": 545,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "janakpuri-west",
+    "name": "Janakpuri West",
+    "aliases": [
+      "janakpuri west"
+    ],
+    "lines": [
+      "blue",
+      "magenta"
+    ],
+    "x": 350,
+    "y": 535,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "janakpuri-east",
+    "name": "Janakpuri East",
+    "aliases": [
+      "janakpuri east"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 370,
+    "y": 530,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tilak-nagar",
+    "name": "Tilak Nagar",
+    "aliases": [
+      "tilak nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 390,
+    "y": 525,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "subhash-nagar",
+    "name": "Subhash Nagar",
+    "aliases": [
+      "subhash nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 410,
+    "y": 520,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tagore-garden",
+    "name": "Tagore Garden",
+    "aliases": [
+      "tagore garden"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 430,
+    "y": 515,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rajouri-garden",
+    "name": "Rajouri Garden",
+    "aliases": [
+      "rajouri garden"
+    ],
+    "lines": [
+      "blue",
+      "pink"
+    ],
+    "x": 450,
+    "y": 510,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ramesh-nagar",
+    "name": "Ramesh Nagar",
+    "aliases": [
+      "ramesh nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 468,
+    "y": 508,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "moti-nagar",
+    "name": "Moti Nagar",
+    "aliases": [
+      "moti nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 486,
+    "y": 506,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kirti-nagar",
+    "name": "Kirti Nagar",
+    "aliases": [
+      "kirti nagar"
+    ],
+    "lines": [
+      "blue",
+      "green-branch"
+    ],
+    "x": 505,
+    "y": 505,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shadipur",
+    "name": "Shadipur",
+    "aliases": [
+      "shadipur"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 518,
+    "y": 507,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "patel-nagar",
+    "name": "Patel Nagar",
+    "aliases": [
+      "patel nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 528,
+    "y": 510,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rajendra-place",
+    "name": "Rajendra Place",
+    "aliases": [
+      "rajendra place"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 535,
+    "y": 515,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "karol-bagh",
+    "name": "Karol Bagh",
+    "aliases": [
+      "karol bagh"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 540,
+    "y": 518,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jhandewalan",
+    "name": "Jhandewalan",
+    "aliases": [
+      "jhandewalan"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 542,
+    "y": 520,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ramakrishna-ashram-marg",
+    "name": "Ramakrishna Ashram Marg",
+    "aliases": [
+      "ramakrishna ashram marg"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 545,
+    "y": 521,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "barakhamba-road",
+    "name": "Barakhamba Road",
+    "aliases": [
+      "barakhamba road"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 570,
+    "y": 526,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mandi-house",
+    "name": "Mandi House",
+    "aliases": [
+      "mandi house"
+    ],
+    "lines": [
+      "blue",
+      "violet"
+    ],
+    "x": 590,
+    "y": 535,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "supreme-court",
+    "name": "Supreme Court",
+    "aliases": [
+      "supreme court"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 615,
+    "y": 545,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "indraprastha",
+    "name": "Indraprastha",
+    "aliases": [
+      "indraprastha"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 640,
+    "y": 555,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "yamuna-bank",
+    "name": "Yamuna Bank",
+    "aliases": [
+      "yamuna bank"
+    ],
+    "lines": [
+      "blue",
+      "blue-branch"
+    ],
+    "x": 675,
+    "y": 565,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "akshardham",
+    "name": "Akshardham",
+    "aliases": [
+      "akshardham"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 700,
+    "y": 585,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mayur-vihar-i",
+    "name": "Mayur Vihar-I",
+    "aliases": [
+      "mayur vihar-i"
+    ],
+    "lines": [
+      "blue",
+      "pink"
+    ],
+    "x": 725,
+    "y": 610,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mayur-vihar-extension",
+    "name": "Mayur Vihar Extension",
+    "aliases": [
+      "mayur vihar extension"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 745,
+    "y": 630,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "new-ashok-nagar",
+    "name": "New Ashok Nagar",
+    "aliases": [
+      "new ashok nagar"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 765,
+    "y": 650,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "noida-sector-15",
+    "name": "Noida Sector 15",
+    "aliases": [
+      "noida sector 15"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 785,
+    "y": 670,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-16",
+    "name": "Noida Sector 16",
+    "aliases": [
+      "noida sector 16"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 805,
+    "y": 685,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-18",
+    "name": "Noida Sector 18",
+    "aliases": [
+      "noida sector 18"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 825,
+    "y": 700,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "botanical-garden",
+    "name": "Botanical Garden",
+    "aliases": [
+      "botanical garden"
+    ],
+    "lines": [
+      "blue",
+      "magenta"
+    ],
+    "x": 850,
+    "y": 715,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "golf-course",
+    "name": "Golf Course",
+    "aliases": [
+      "golf course"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 875,
+    "y": 725,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "noida-city-centre",
+    "name": "Noida City Centre",
+    "aliases": [
+      "noida city centre"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 900,
+    "y": 735,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-34",
+    "name": "Noida Sector 34",
+    "aliases": [
+      "noida sector 34"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 920,
+    "y": 745,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-52",
+    "name": "Noida Sector 52",
+    "aliases": [
+      "noida sector 52"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 945,
+    "y": 755,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-61",
+    "name": "Noida Sector 61",
+    "aliases": [
+      "noida sector 61"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 965,
+    "y": 760,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-59",
+    "name": "Noida Sector 59",
+    "aliases": [
+      "noida sector 59"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 985,
+    "y": 765,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-62",
+    "name": "Noida Sector 62",
+    "aliases": [
+      "noida sector 62"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 1005,
+    "y": 770,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-electronic-city",
+    "name": "Noida Electronic City",
+    "aliases": [
+      "noida electronic city"
+    ],
+    "lines": [
+      "blue"
+    ],
+    "x": 1025,
+    "y": 775,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "laxmi-nagar",
+    "name": "Laxmi Nagar",
+    "aliases": [
+      "laxmi nagar"
+    ],
+    "lines": [
+      "blue-branch"
+    ],
+    "x": 700,
+    "y": 550,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nirman-vihar",
+    "name": "Nirman Vihar",
+    "aliases": [
+      "nirman vihar"
+    ],
+    "lines": [
+      "blue-branch"
+    ],
+    "x": 720,
+    "y": 540,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "preet-vihar",
+    "name": "Preet Vihar",
+    "aliases": [
+      "preet vihar"
+    ],
+    "lines": [
+      "blue-branch"
+    ],
+    "x": 740,
+    "y": 530,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "karkarduma",
+    "name": "Karkarduma",
+    "aliases": [
+      "karkarduma"
+    ],
+    "lines": [
+      "blue-branch",
+      "pink"
+    ],
+    "x": 765,
+    "y": 515,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "anand-vihar-isbt",
+    "name": "Anand Vihar ISBT",
+    "aliases": [
+      "anand vihar isbt"
+    ],
+    "lines": [
+      "blue-branch",
+      "pink"
+    ],
+    "x": 790,
+    "y": 505,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kaushambi",
+    "name": "Kaushambi",
+    "aliases": [
+      "kaushambi"
+    ],
+    "lines": [
+      "blue-branch"
+    ],
+    "x": 820,
+    "y": 495,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "vaishali",
+    "name": "Vaishali",
+    "aliases": [
+      "vaishali"
+    ],
+    "lines": [
+      "blue-branch"
+    ],
+    "x": 850,
+    "y": 485,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ashok-park-main",
+    "name": "Ashok Park Main",
+    "aliases": [
+      "ashok park main"
+    ],
+    "lines": [
+      "green",
+      "green-branch"
+    ],
+    "x": 430,
+    "y": 380,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "punjabi-bagh",
+    "name": "Punjabi Bagh",
+    "aliases": [
+      "punjabi bagh"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 405,
+    "y": 400,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "punjabi-bagh-west",
+    "name": "Punjabi Bagh West",
+    "aliases": [
+      "punjabi bagh west"
+    ],
+    "lines": [
+      "green",
+      "pink"
+    ],
+    "x": 380,
+    "y": 420,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shivaji-park",
+    "name": "Shivaji Park",
+    "aliases": [
+      "shivaji park"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 355,
+    "y": 430,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "madipur",
+    "name": "Madipur",
+    "aliases": [
+      "madipur"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 330,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "paschim-vihar-east",
+    "name": "Paschim Vihar East",
+    "aliases": [
+      "paschim vihar east"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 305,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "paschim-vihar-west",
+    "name": "Paschim Vihar West",
+    "aliases": [
+      "paschim vihar west"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 280,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "peeragarhi",
+    "name": "Peeragarhi",
+    "aliases": [
+      "peeragarhi"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 255,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "udyog-nagar",
+    "name": "Udyog Nagar",
+    "aliases": [
+      "udyog nagar"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 230,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "maharaja-surajmal-stadium",
+    "name": "Maharaja Surajmal Stadium",
+    "aliases": [
+      "maharaja surajmal stadium"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 205,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nangloi",
+    "name": "Nangloi",
+    "aliases": [
+      "nangloi"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 180,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nangloi-railway-station",
+    "name": "Nangloi Railway Station",
+    "aliases": [
+      "nangloi railway station"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 155,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rajdhani-park",
+    "name": "Rajdhani Park",
+    "aliases": [
+      "rajdhani park"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 130,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mundka",
+    "name": "Mundka",
+    "aliases": [
+      "mundka"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 105,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mundka-industrial-area",
+    "name": "Mundka Industrial Area",
+    "aliases": [
+      "mundka industrial area"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 85,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ghevra-metro-station",
+    "name": "Ghevra Metro Station",
+    "aliases": [
+      "ghevra metro station"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 65,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tikri-kalan",
+    "name": "Tikri Kalan",
+    "aliases": [
+      "tikri kalan"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 45,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tikri-border",
+    "name": "Tikri Border",
+    "aliases": [
+      "tikri border"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 25,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "pandit-shree-ram-sharma",
+    "name": "Pandit Shree Ram Sharma",
+    "aliases": [
+      "pandit shree ram sharma"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": 10,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "bahadurgarh-city",
+    "name": "Bahadurgarh City",
+    "aliases": [
+      "bahadurgarh city"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": -5,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "brigadier-hoshiar-singh",
+    "name": "Brigadier Hoshiar Singh",
+    "aliases": [
+      "brigadier hoshiar singh"
+    ],
+    "lines": [
+      "green"
+    ],
+    "x": -20,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "lal-quila",
+    "name": "Lal Quila",
+    "aliases": [
+      "lal quila"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 575,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jama-masjid",
+    "name": "Jama Masjid",
+    "aliases": [
+      "jama masjid"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 580,
+    "y": 460,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "delhi-gate",
+    "name": "Delhi Gate",
+    "aliases": [
+      "delhi gate"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 585,
+    "y": 485,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ito",
+    "name": "ITO",
+    "aliases": [
+      "ito"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 590,
+    "y": 510,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "janpath",
+    "name": "Janpath",
+    "aliases": [
+      "janpath"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 575,
+    "y": 555,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "khan-market",
+    "name": "Khan Market",
+    "aliases": [
+      "khan market"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 560,
+    "y": 610,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jawaharlal-nehru-stadium",
+    "name": "Jawaharlal Nehru Stadium",
+    "aliases": [
+      "jawaharlal nehru stadium"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 575,
+    "y": 635,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jangpura",
+    "name": "Jangpura",
+    "aliases": [
+      "jangpura"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 590,
+    "y": 660,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "lajpat-nagar",
+    "name": "Lajpat Nagar",
+    "aliases": [
+      "lajpat nagar"
+    ],
+    "lines": [
+      "violet",
+      "pink"
+    ],
+    "x": 605,
+    "y": 685,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "moolchand",
+    "name": "Moolchand",
+    "aliases": [
+      "moolchand"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 615,
+    "y": 710,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kailash-colony",
+    "name": "Kailash Colony",
+    "aliases": [
+      "kailash colony"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 625,
+    "y": 735,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nehru-place",
+    "name": "Nehru Place",
+    "aliases": [
+      "nehru place"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 635,
+    "y": 760,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kalkaji-mandir",
+    "name": "Kalkaji Mandir",
+    "aliases": [
+      "kalkaji mandir"
+    ],
+    "lines": [
+      "violet",
+      "magenta"
+    ],
+    "x": 650,
+    "y": 785,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "govind-puri",
+    "name": "Govind Puri",
+    "aliases": [
+      "govind puri"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 660,
+    "y": 810,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "harkesh-nagar-okhla",
+    "name": "Harkesh Nagar Okhla",
+    "aliases": [
+      "harkesh nagar okhla"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 670,
+    "y": 835,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jasola-apollo",
+    "name": "Jasola Apollo",
+    "aliases": [
+      "jasola apollo"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 680,
+    "y": 860,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sarita-vihar",
+    "name": "Sarita Vihar",
+    "aliases": [
+      "sarita vihar"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 690,
+    "y": 885,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mohan-estate",
+    "name": "Mohan Estate",
+    "aliases": [
+      "mohan estate"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 700,
+    "y": 910,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "tughlakabad-station",
+    "name": "Tughlakabad Station",
+    "aliases": [
+      "tughlakabad station"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 710,
+    "y": 935,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "badarpur-border",
+    "name": "Badarpur Border",
+    "aliases": [
+      "badarpur border"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 720,
+    "y": 960,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sarai",
+    "name": "Sarai",
+    "aliases": [
+      "sarai"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 730,
+    "y": 985,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nhpc-chowk",
+    "name": "NHPC Chowk",
+    "aliases": [
+      "nhpc chowk"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 740,
+    "y": 1010,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mewala-maharajpur",
+    "name": "Mewala Maharajpur",
+    "aliases": [
+      "mewala maharajpur"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 750,
+    "y": 1035,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-28",
+    "name": "Sector 28",
+    "aliases": [
+      "sector 28"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 760,
+    "y": 1060,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "badkal-mor",
+    "name": "Badkal Mor",
+    "aliases": [
+      "badkal mor"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 770,
+    "y": 1085,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "old-faridabad",
+    "name": "Old Faridabad",
+    "aliases": [
+      "old faridabad"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 780,
+    "y": 1110,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "neelam-chowk-ajronda",
+    "name": "Neelam Chowk Ajronda",
+    "aliases": [
+      "neelam chowk ajronda"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 790,
+    "y": 1135,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "bata-chowk",
+    "name": "Bata Chowk",
+    "aliases": [
+      "bata chowk"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 800,
+    "y": 1160,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "escorts-mujesar",
+    "name": "Escorts Mujesar",
+    "aliases": [
+      "escorts mujesar"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 810,
+    "y": 1185,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sant-surdas-sihi",
+    "name": "Sant Surdas (Sihi)",
+    "aliases": [
+      "sant surdas (sihi)"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 820,
+    "y": 1210,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "raja-nahar-singh",
+    "name": "Raja Nahar Singh",
+    "aliases": [
+      "raja nahar singh"
+    ],
+    "lines": [
+      "violet"
+    ],
+    "x": 830,
+    "y": 1235,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "majlis-park",
+    "name": "Majlis Park",
+    "aliases": [
+      "majlis park"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 450,
+    "y": 260,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shalimar-bagh",
+    "name": "Shalimar Bagh",
+    "aliases": [
+      "shalimar bagh"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 430,
+    "y": 295,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shakurpur",
+    "name": "Shakurpur",
+    "aliases": [
+      "shakurpur"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 385,
+    "y": 360,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "esi-basaidarapur",
+    "name": "ESI - Basaidarapur",
+    "aliases": [
+      "esi - basaidarapur"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 415,
+    "y": 465,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mayapuri",
+    "name": "Mayapuri",
+    "aliases": [
+      "mayapuri"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 430,
+    "y": 550,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "naraina-vihar",
+    "name": "Naraina Vihar",
+    "aliases": [
+      "naraina vihar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 420,
+    "y": 580,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "delhi-cantt",
+    "name": "Delhi Cantt",
+    "aliases": [
+      "delhi cantt"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 410,
+    "y": 620,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "durgabai-deshmukh-south-campus",
+    "name": "Durgabai Deshmukh South Campus",
+    "aliases": [
+      "durgabai deshmukh south campus"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 425,
+    "y": 660,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sir-m-vishweshwaraiah-moti-bagh",
+    "name": "Sir M. Vishweshwaraiah Moti Bagh",
+    "aliases": [
+      "sir m. vishweshwaraiah moti bagh"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 450,
+    "y": 675,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "bhikaji-cama-place",
+    "name": "Bhikaji Cama Place",
+    "aliases": [
+      "bhikaji cama place"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 475,
+    "y": 680,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sarojini-nagar",
+    "name": "Sarojini Nagar",
+    "aliases": [
+      "sarojini nagar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 495,
+    "y": 682,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "south-extension",
+    "name": "South Extension",
+    "aliases": [
+      "south extension"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 560,
+    "y": 685,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "vinobapuri",
+    "name": "Vinobapuri",
+    "aliases": [
+      "vinobapuri"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 640,
+    "y": 680,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ashram",
+    "name": "Ashram",
+    "aliases": [
+      "ashram"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 670,
+    "y": 670,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sarai-kale-khan-nizamuddin",
+    "name": "Sarai Kale Khan - Nizamuddin",
+    "aliases": [
+      "sarai kale khan - nizamuddin"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 700,
+    "y": 650,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mayur-vihar-pocket-1",
+    "name": "Mayur Vihar Pocket 1",
+    "aliases": [
+      "mayur vihar pocket 1"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 740,
+    "y": 590,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "trilokpuri-sanjay-lake",
+    "name": "Trilokpuri Sanjay Lake",
+    "aliases": [
+      "trilokpuri sanjay lake"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 755,
+    "y": 570,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "east-vinod-nagar-mayur-vihar-ii",
+    "name": "East Vinod Nagar - Mayur Vihar-II",
+    "aliases": [
+      "east vinod nagar - mayur vihar-ii"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 770,
+    "y": 550,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "mandawali-west-vinod-nagar",
+    "name": "Mandawali - West Vinod Nagar",
+    "aliases": [
+      "mandawali - west vinod nagar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 775,
+    "y": 535,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "ip-extension",
+    "name": "IP Extension",
+    "aliases": [
+      "ip extension"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 780,
+    "y": 520,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "karkarduma-court",
+    "name": "Karkarduma Court",
+    "aliases": [
+      "karkarduma court"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 750,
+    "y": 490,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "krishna-nagar",
+    "name": "Krishna Nagar",
+    "aliases": [
+      "krishna nagar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 730,
+    "y": 460,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "east-azad-nagar",
+    "name": "East Azad Nagar",
+    "aliases": [
+      "east azad nagar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 705,
+    "y": 435,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jaffrabad",
+    "name": "Jaffrabad",
+    "aliases": [
+      "jaffrabad"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 685,
+    "y": 380,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "maujpur-babarpur",
+    "name": "Maujpur - Babarpur",
+    "aliases": [
+      "maujpur - babarpur"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 695,
+    "y": 350,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "gokulpuri",
+    "name": "Gokulpuri",
+    "aliases": [
+      "gokulpuri"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 710,
+    "y": 320,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "johri-enclave",
+    "name": "Johri Enclave",
+    "aliases": [
+      "johri enclave"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 730,
+    "y": 290,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shiv-vihar",
+    "name": "Shiv Vihar",
+    "aliases": [
+      "shiv vihar"
+    ],
+    "lines": [
+      "pink"
+    ],
+    "x": 750,
+    "y": 260,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dabri-mor-janakpuri-south",
+    "name": "Dabri Mor - Janakpuri South",
+    "aliases": [
+      "dabri mor - janakpuri south"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 335,
+    "y": 565,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dashrath-puri",
+    "name": "Dashrath Puri",
+    "aliases": [
+      "dashrath puri"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 320,
+    "y": 595,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "palam",
+    "name": "Palam",
+    "aliases": [
+      "palam"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 310,
+    "y": 625,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sadar-bazar-cantonment",
+    "name": "Sadar Bazar Cantonment",
+    "aliases": [
+      "sadar bazar cantonment"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 330,
+    "y": 655,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "terminal-1-igi-airport",
+    "name": "Terminal 1-IGI Airport",
+    "aliases": [
+      "terminal 1-igi airport"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 360,
+    "y": 685,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shankar-vihar",
+    "name": "Shankar Vihar",
+    "aliases": [
+      "shankar vihar"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 390,
+    "y": 710,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "vasant-vihar",
+    "name": "Vasant Vihar",
+    "aliases": [
+      "vasant vihar"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 420,
+    "y": 730,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "munirka",
+    "name": "Munirka",
+    "aliases": [
+      "munirka"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 450,
+    "y": 745,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "rk-puram",
+    "name": "RK Puram",
+    "aliases": [
+      "rk puram"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 470,
+    "y": 755,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "iit",
+    "name": "IIT",
+    "aliases": [
+      "iit"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 485,
+    "y": 760,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "panchsheel-park",
+    "name": "Panchsheel Park",
+    "aliases": [
+      "panchsheel park"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 525,
+    "y": 770,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "chirag-delhi",
+    "name": "Chirag Delhi",
+    "aliases": [
+      "chirag delhi"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 555,
+    "y": 775,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "greater-kailash",
+    "name": "Greater Kailash",
+    "aliases": [
+      "greater kailash"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 585,
+    "y": 780,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nehru-enclave",
+    "name": "Nehru Enclave",
+    "aliases": [
+      "nehru enclave"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 615,
+    "y": 782,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "okhla-nsic",
+    "name": "Okhla NSIC",
+    "aliases": [
+      "okhla nsic"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 680,
+    "y": 785,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sukhdev-vihar",
+    "name": "Sukhdev Vihar",
+    "aliases": [
+      "sukhdev vihar"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 710,
+    "y": 785,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jamia-millia-islamia",
+    "name": "Jamia Millia Islamia",
+    "aliases": [
+      "jamia millia islamia"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 740,
+    "y": 780,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "okhla-vihar",
+    "name": "Okhla Vihar",
+    "aliases": [
+      "okhla vihar"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 770,
+    "y": 770,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "jasola-vihar-shaheen-bagh",
+    "name": "Jasola Vihar Shaheen Bagh",
+    "aliases": [
+      "jasola vihar shaheen bagh"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 800,
+    "y": 755,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "kalindi-kunj",
+    "name": "Kalindi Kunj",
+    "aliases": [
+      "kalindi kunj"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 825,
+    "y": 735,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "okhla-bird-sanctuary",
+    "name": "Okhla Bird Sanctuary",
+    "aliases": [
+      "okhla bird sanctuary"
+    ],
+    "lines": [
+      "magenta"
+    ],
+    "x": 840,
+    "y": 725,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nangli",
+    "name": "Nangli",
+    "aliases": [
+      "nangli"
+    ],
+    "lines": [
+      "grey"
+    ],
+    "x": 220,
+    "y": 585,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "najafgarh",
+    "name": "Najafgarh",
+    "aliases": [
+      "najafgarh"
+    ],
+    "lines": [
+      "grey"
+    ],
+    "x": 195,
+    "y": 585,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dhansa-bus-stand",
+    "name": "Dhansa Bus Stand",
+    "aliases": [
+      "dhansa bus stand"
+    ],
+    "lines": [
+      "grey"
+    ],
+    "x": 170,
+    "y": 585,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "shivaji-stadium",
+    "name": "Shivaji Stadium",
+    "aliases": [
+      "shivaji stadium"
+    ],
+    "lines": [
+      "airport"
+    ],
+    "x": 515,
+    "y": 530,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "dhaula-kuan",
+    "name": "Dhaula Kuan",
+    "aliases": [
+      "dhaula kuan"
+    ],
+    "lines": [
+      "airport"
+    ],
+    "x": 440,
+    "y": 640,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "delhi-aerocity",
+    "name": "Delhi Aerocity",
+    "aliases": [
+      "delhi aerocity"
+    ],
+    "lines": [
+      "airport"
+    ],
+    "x": 375,
+    "y": 700,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "airport-t-3",
+    "name": "Airport (T-3)",
+    "aliases": [
+      "airport (t-3)"
+    ],
+    "lines": [
+      "airport"
+    ],
+    "x": 310,
+    "y": 730,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "yashobhoomi-dwarka-sector-25",
+    "name": "Yashobhoomi Dwarka Sector 25",
+    "aliases": [
+      "yashobhoomi dwarka sector 25"
+    ],
+    "lines": [
+      "airport"
+    ],
+    "x": 90,
+    "y": 720,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "phase-2",
+    "name": "Phase 2",
+    "aliases": [
+      "phase 2"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 395,
+    "y": 1000,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "belvedere-towers",
+    "name": "Belvedere Towers",
+    "aliases": [
+      "belvedere towers"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 405,
+    "y": 990,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "cyber-city",
+    "name": "Cyber City",
+    "aliases": [
+      "cyber city"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 415,
+    "y": 980,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "moulsari-avenue",
+    "name": "Moulsari Avenue",
+    "aliases": [
+      "moulsari avenue"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 425,
+    "y": 990,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "phase-3",
+    "name": "Phase 3",
+    "aliases": [
+      "phase 3"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 415,
+    "y": 1005,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "phase-1",
+    "name": "Phase 1",
+    "aliases": [
+      "phase 1"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 395,
+    "y": 1030,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-42-43",
+    "name": "Sector 42-43",
+    "aliases": [
+      "sector 42-43"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 405,
+    "y": 1050,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-53-54",
+    "name": "Sector 53-54",
+    "aliases": [
+      "sector 53-54"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 415,
+    "y": 1070,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-54-chowk",
+    "name": "Sector 54 Chowk",
+    "aliases": [
+      "sector 54 chowk"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 425,
+    "y": 1090,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-55-56",
+    "name": "Sector 55-56",
+    "aliases": [
+      "sector 55-56"
+    ],
+    "lines": [
+      "rapid-metro"
+    ],
+    "x": 435,
+    "y": 1110,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "noida-sector-51",
+    "name": "Noida Sector 51",
+    "aliases": [
+      "noida sector 51"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 945,
+    "y": 770,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "noida-sector-50",
+    "name": "Noida Sector 50",
+    "aliases": [
+      "noida sector 50"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 960,
+    "y": 790,
+    "zone": "noida",
+    "active": true
+  },
+  {
+    "id": "sector-76",
+    "name": "Sector 76",
+    "aliases": [
+      "sector 76"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 975,
+    "y": 810,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-101",
+    "name": "Sector 101",
+    "aliases": [
+      "sector 101"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 990,
+    "y": 830,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-81",
+    "name": "Sector 81",
+    "aliases": [
+      "sector 81"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1005,
+    "y": 850,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "nsez",
+    "name": "NSEZ",
+    "aliases": [
+      "nsez"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1020,
+    "y": 870,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-83",
+    "name": "Sector 83",
+    "aliases": [
+      "sector 83"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1035,
+    "y": 890,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-137",
+    "name": "Sector 137",
+    "aliases": [
+      "sector 137"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1050,
+    "y": 910,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-142",
+    "name": "Sector 142",
+    "aliases": [
+      "sector 142"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1065,
+    "y": 930,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-143",
+    "name": "Sector 143",
+    "aliases": [
+      "sector 143"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1080,
+    "y": 950,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-144",
+    "name": "Sector 144",
+    "aliases": [
+      "sector 144"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1095,
+    "y": 970,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-145",
+    "name": "Sector 145",
+    "aliases": [
+      "sector 145"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1110,
+    "y": 990,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-146",
+    "name": "Sector 146",
+    "aliases": [
+      "sector 146"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1125,
+    "y": 1010,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-147",
+    "name": "Sector 147",
+    "aliases": [
+      "sector 147"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1140,
+    "y": 1030,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "sector-148",
+    "name": "Sector 148",
+    "aliases": [
+      "sector 148"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1155,
+    "y": 1050,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "knowledge-park-ii",
+    "name": "Knowledge Park II",
+    "aliases": [
+      "knowledge park ii"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1170,
+    "y": 1070,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "pari-chowk",
+    "name": "Pari Chowk",
+    "aliases": [
+      "pari chowk"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1185,
+    "y": 1090,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "alpha-1",
+    "name": "Alpha 1",
+    "aliases": [
+      "alpha 1"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1200,
+    "y": 1110,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "delta-1",
+    "name": "Delta 1",
+    "aliases": [
+      "delta 1"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1215,
+    "y": 1130,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "gnida-office",
+    "name": "GNIDA Office",
+    "aliases": [
+      "gnida office"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1230,
+    "y": 1150,
+    "zone": "delhi",
+    "active": true
+  },
+  {
+    "id": "depot",
+    "name": "Depot",
+    "aliases": [
+      "depot"
+    ],
+    "lines": [
+      "aqua"
+    ],
+    "x": 1245,
+    "y": 1170,
+    "zone": "delhi",
+    "active": true
+  }
+]

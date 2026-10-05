@@ -1,0 +1,128 @@
+[
+  {
+    "id": "red",
+    "name": "Red Line",
+    "color": "#E21836",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Shaheed Sthal (New Bus Adda) to Rithala"
+  },
+  {
+    "id": "yellow",
+    "name": "Yellow Line",
+    "color": "#FFC600",
+    "textColor": "#171717",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Samaypur Badli to Millennium City Centre Gurugram"
+  },
+  {
+    "id": "blue",
+    "name": "Blue Line",
+    "color": "#0072CE",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Dwarka Sector 21 to Noida Electronic City"
+  },
+  {
+    "id": "blue-branch",
+    "name": "Blue Line (Branch)",
+    "color": "#0091DA",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Yamuna Bank to Vaishali"
+  },
+  {
+    "id": "green",
+    "name": "Green Line",
+    "color": "#009A44",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Inderlok / Kirti Nagar to Brigadier Hoshiar Singh"
+  },
+  {
+    "id": "green-branch",
+    "name": "Green Line (Branch)",
+    "color": "#00A859",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Kirti Nagar to Ashok Park Main"
+  },
+  {
+    "id": "interchange-walk",
+    "name": "Interchange Walkway",
+    "color": "#9E9E9E",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC / NMRC",
+    "active": true,
+    "description": "Pedestrian interchange walkway"
+  },
+  {
+    "id": "violet",
+    "name": "Violet Line",
+    "color": "#7B2382",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Kashmere Gate to Raja Nahar Singh"
+  },
+  {
+    "id": "pink",
+    "name": "Pink Line",
+    "color": "#E55393",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Majlis Park to Shiv Vihar (Ring Line)"
+  },
+  {
+    "id": "magenta",
+    "name": "Magenta Line",
+    "color": "#9A1F6E",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Janakpuri West to Botanical Garden"
+  },
+  {
+    "id": "grey",
+    "name": "Grey Line",
+    "color": "#7D8387",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "Dwarka to Dhansa Bus Stand"
+  },
+  {
+    "id": "airport",
+    "name": "Airport Express (Orange Line)",
+    "color": "#FF7300",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC",
+    "active": true,
+    "description": "New Delhi to Yashobhoomi Dwarka Sector 25"
+  },
+  {
+    "id": "rapid-metro",
+    "name": "Rapid Metro Gurugram",
+    "color": "#8E24AA",
+    "textColor": "#FFFFFF",
+    "operator": "DMRC / Rapid Metro",
+    "active": true,
+    "description": "Sector 55-56 to Sikanderpur loop"
+  },
+  {
+    "id": "aqua",
+    "name": "Aqua Line",
+    "color": "#00B4D8",
+    "textColor": "#FFFFFF",
+    "operator": "NMRC",
+    "active": true,
+    "description": "Noida Sector 51 to Depot"
+  }
+]

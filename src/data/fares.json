@@ -1,0 +1,93 @@
+{
+  "version": "2026.10.1",
+  "source": "DMRC Official Fare Slab",
+  "currency": "INR",
+  "slabs": [
+    {
+      "minKm": 0,
+      "maxKm": 2,
+      "weekdayFare": 11,
+      "sundayFare": 11
+    },
+    {
+      "minKm": 2,
+      "maxKm": 5,
+      "weekdayFare": 21,
+      "sundayFare": 11
+    },
+    {
+      "minKm": 5,
+      "maxKm": 12,
+      "weekdayFare": 32,
+      "sundayFare": 21
+    },
+    {
+      "minKm": 12,
+      "maxKm": 21,
+      "weekdayFare": 43,
+      "sundayFare": 32
+    },
+    {
+      "minKm": 21,
+      "maxKm": 32,
+      "weekdayFare": 54,
+      "sundayFare": 43
+    },
+    {
+      "minKm": 32,
+      "maxKm": 999,
+      "weekdayFare": 64,
+      "sundayFare": 54
+    }
+  ],
+  "smartCard": {
+    "baseDiscountPercent": 10,
+    "offPeakAdditionalDiscountPercent": 10,
+    "offPeakWindowsWeekday": [
+      {
+        "start": "05:30",
+        "end": "08:00"
+      },
+      {
+        "start": "12:00",
+        "end": "17:00"
+      },
+      {
+        "start": "21:00",
+        "end": "23:59"
+      }
+    ]
+  },
+  "airportExpressSlabs": [
+    {
+      "minKm": 0,
+      "maxKm": 6,
+      "weekdayFare": 20,
+      "sundayFare": 20
+    },
+    {
+      "minKm": 6,
+      "maxKm": 12,
+      "weekdayFare": 30,
+      "sundayFare": 30
+    },
+    {
+      "minKm": 12,
+      "maxKm": 18,
+      "weekdayFare": 40,
+      "sundayFare": 40
+    },
+    {
+      "minKm": 18,
+      "maxKm": 25,
+      "weekdayFare": 50,
+      "sundayFare": 50
+    },
+    {
+      "minKm": 25,
+      "maxKm": 999,
+      "weekdayFare": 60,
+      "sundayFare": 60
+    }
+  ]
+}

@@ -1,0 +1,2218 @@
+[
+  {
+    "from": "rithala",
+    "to": "rohini-west",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rohini-west",
+    "to": "rohini-east",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rohini-east",
+    "to": "pitampura",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "pitampura",
+    "to": "kohat-enclave",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kohat-enclave",
+    "to": "netaji-subhash-place",
+    "line": "red",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "netaji-subhash-place",
+    "to": "keshav-puram",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "keshav-puram",
+    "to": "kanhaiya-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kanhaiya-nagar",
+    "to": "inderlok",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "inderlok",
+    "to": "shastri-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shastri-nagar",
+    "to": "pratap-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "pratap-nagar",
+    "to": "pul-bangash",
+    "line": "red",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "pul-bangash",
+    "to": "tis-hazari",
+    "line": "red",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tis-hazari",
+    "to": "kashmere-gate",
+    "line": "red",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kashmere-gate",
+    "to": "shastri-park",
+    "line": "red",
+    "distance_km": 2.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shastri-park",
+    "to": "seelampur",
+    "line": "red",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "seelampur",
+    "to": "welcome",
+    "line": "red",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "welcome",
+    "to": "shahdara",
+    "line": "red",
+    "distance_km": 2.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shahdara",
+    "to": "mansarovar-park",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mansarovar-park",
+    "to": "jhilmil",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jhilmil",
+    "to": "dilshad-garden",
+    "line": "red",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dilshad-garden",
+    "to": "shaheed-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shaheed-nagar",
+    "to": "raj-bagh",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "raj-bagh",
+    "to": "major-mohit-sharma-rajendra-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "major-mohit-sharma-rajendra-nagar",
+    "to": "shyam-park",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shyam-park",
+    "to": "mohan-nagar",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mohan-nagar",
+    "to": "arthala",
+    "line": "red",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "arthala",
+    "to": "hindon-river",
+    "line": "red",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "hindon-river",
+    "to": "shaheed-sthal-new-bus-adda",
+    "line": "red",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "samaypur-badli",
+    "to": "rohini-sector-18-19",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rohini-sector-18-19",
+    "to": "haiderpur-badli-mor",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "haiderpur-badli-mor",
+    "to": "jahangirpuri",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jahangirpuri",
+    "to": "adarsh-nagar",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "adarsh-nagar",
+    "to": "azadpur",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "azadpur",
+    "to": "model-town",
+    "line": "yellow",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "model-town",
+    "to": "guru-tegh-bahadur-nagar",
+    "line": "yellow",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "guru-tegh-bahadur-nagar",
+    "to": "vishwavidyalaya",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "vishwavidyalaya",
+    "to": "vidhan-sabha",
+    "line": "yellow",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "vidhan-sabha",
+    "to": "civil-lines",
+    "line": "yellow",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "civil-lines",
+    "to": "kashmere-gate",
+    "line": "yellow",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kashmere-gate",
+    "to": "chandni-chowk",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "chandni-chowk",
+    "to": "chawri-bazar",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "chawri-bazar",
+    "to": "new-delhi",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "new-delhi",
+    "to": "rajiv-chowk",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajiv-chowk",
+    "to": "patel-chowk",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "patel-chowk",
+    "to": "central-secretariat",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "central-secretariat",
+    "to": "udyog-bhawan",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "udyog-bhawan",
+    "to": "lok-kalyan-marg",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "lok-kalyan-marg",
+    "to": "jor-bagh",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jor-bagh",
+    "to": "dilli-haat-ina",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dilli-haat-ina",
+    "to": "aiims",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "aiims",
+    "to": "green-park",
+    "line": "yellow",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "green-park",
+    "to": "hauz-khas",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "hauz-khas",
+    "to": "malviya-nagar",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "malviya-nagar",
+    "to": "saket",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "saket",
+    "to": "qutab-minar",
+    "line": "yellow",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "qutab-minar",
+    "to": "chhatarpur",
+    "line": "yellow",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "chhatarpur",
+    "to": "sultanpur",
+    "line": "yellow",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sultanpur",
+    "to": "ghitorni",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ghitorni",
+    "to": "arjan-garh",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "arjan-garh",
+    "to": "guru-dronacharya",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "guru-dronacharya",
+    "to": "sikanderpur",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sikanderpur",
+    "to": "mg-road",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mg-road",
+    "to": "iffco-chowk",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "iffco-chowk",
+    "to": "millennium-city-centre-gurugram",
+    "line": "yellow",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-21",
+    "to": "dwarka-sector-8",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-8",
+    "to": "dwarka-sector-9",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-9",
+    "to": "dwarka-sector-10",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-10",
+    "to": "dwarka-sector-11",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-11",
+    "to": "dwarka-sector-12",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-12",
+    "to": "dwarka-sector-13",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-13",
+    "to": "dwarka-sector-14",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-14",
+    "to": "dwarka",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka",
+    "to": "dwarka-mor",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-mor",
+    "to": "nawada",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nawada",
+    "to": "uttam-nagar-west",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "uttam-nagar-west",
+    "to": "uttam-nagar-east",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "uttam-nagar-east",
+    "to": "janakpuri-west",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "janakpuri-west",
+    "to": "janakpuri-east",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "janakpuri-east",
+    "to": "tilak-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tilak-nagar",
+    "to": "subhash-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "subhash-nagar",
+    "to": "tagore-garden",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tagore-garden",
+    "to": "rajouri-garden",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajouri-garden",
+    "to": "ramesh-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ramesh-nagar",
+    "to": "moti-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "moti-nagar",
+    "to": "kirti-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kirti-nagar",
+    "to": "shadipur",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shadipur",
+    "to": "patel-nagar",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "patel-nagar",
+    "to": "rajendra-place",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajendra-place",
+    "to": "karol-bagh",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "karol-bagh",
+    "to": "jhandewalan",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jhandewalan",
+    "to": "ramakrishna-ashram-marg",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ramakrishna-ashram-marg",
+    "to": "rajiv-chowk",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajiv-chowk",
+    "to": "barakhamba-road",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "barakhamba-road",
+    "to": "mandi-house",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mandi-house",
+    "to": "supreme-court",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "supreme-court",
+    "to": "indraprastha",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "indraprastha",
+    "to": "yamuna-bank",
+    "line": "blue",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "yamuna-bank",
+    "to": "akshardham",
+    "line": "blue",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "akshardham",
+    "to": "mayur-vihar-i",
+    "line": "blue",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mayur-vihar-i",
+    "to": "mayur-vihar-extension",
+    "line": "blue",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mayur-vihar-extension",
+    "to": "new-ashok-nagar",
+    "line": "blue",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "new-ashok-nagar",
+    "to": "noida-sector-15",
+    "line": "blue",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-15",
+    "to": "noida-sector-16",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-16",
+    "to": "noida-sector-18",
+    "line": "blue",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-18",
+    "to": "botanical-garden",
+    "line": "blue",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "botanical-garden",
+    "to": "golf-course",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "golf-course",
+    "to": "noida-city-centre",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-city-centre",
+    "to": "noida-sector-34",
+    "line": "blue",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-34",
+    "to": "noida-sector-52",
+    "line": "blue",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-52",
+    "to": "noida-sector-61",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-61",
+    "to": "noida-sector-59",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-59",
+    "to": "noida-sector-62",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-62",
+    "to": "noida-electronic-city",
+    "line": "blue",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "yamuna-bank",
+    "to": "laxmi-nagar",
+    "line": "blue-branch",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "laxmi-nagar",
+    "to": "nirman-vihar",
+    "line": "blue-branch",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nirman-vihar",
+    "to": "preet-vihar",
+    "line": "blue-branch",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "preet-vihar",
+    "to": "karkarduma",
+    "line": "blue-branch",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "karkarduma",
+    "to": "anand-vihar-isbt",
+    "line": "blue-branch",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "anand-vihar-isbt",
+    "to": "kaushambi",
+    "line": "blue-branch",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kaushambi",
+    "to": "vaishali",
+    "line": "blue-branch",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "inderlok",
+    "to": "ashok-park-main",
+    "line": "green",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ashok-park-main",
+    "to": "punjabi-bagh",
+    "line": "green",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "punjabi-bagh",
+    "to": "punjabi-bagh-west",
+    "line": "green",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "punjabi-bagh-west",
+    "to": "shivaji-park",
+    "line": "green",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shivaji-park",
+    "to": "madipur",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "madipur",
+    "to": "paschim-vihar-east",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "paschim-vihar-east",
+    "to": "paschim-vihar-west",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "paschim-vihar-west",
+    "to": "peeragarhi",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "peeragarhi",
+    "to": "udyog-nagar",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "udyog-nagar",
+    "to": "maharaja-surajmal-stadium",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "maharaja-surajmal-stadium",
+    "to": "nangloi",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nangloi",
+    "to": "nangloi-railway-station",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nangloi-railway-station",
+    "to": "rajdhani-park",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajdhani-park",
+    "to": "mundka",
+    "line": "green",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mundka",
+    "to": "mundka-industrial-area",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mundka-industrial-area",
+    "to": "ghevra-metro-station",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ghevra-metro-station",
+    "to": "tikri-kalan",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tikri-kalan",
+    "to": "tikri-border",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tikri-border",
+    "to": "pandit-shree-ram-sharma",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "pandit-shree-ram-sharma",
+    "to": "bahadurgarh-city",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "bahadurgarh-city",
+    "to": "brigadier-hoshiar-singh",
+    "line": "green",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kirti-nagar",
+    "to": "ashok-park-main",
+    "line": "green-branch",
+    "distance_km": 3.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kashmere-gate",
+    "to": "lal-quila",
+    "line": "violet",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "lal-quila",
+    "to": "jama-masjid",
+    "line": "violet",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jama-masjid",
+    "to": "delhi-gate",
+    "line": "violet",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "delhi-gate",
+    "to": "ito",
+    "line": "violet",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ito",
+    "to": "mandi-house",
+    "line": "violet",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mandi-house",
+    "to": "janpath",
+    "line": "violet",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "janpath",
+    "to": "central-secretariat",
+    "line": "violet",
+    "distance_km": 2.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "central-secretariat",
+    "to": "khan-market",
+    "line": "violet",
+    "distance_km": 2.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "khan-market",
+    "to": "jawaharlal-nehru-stadium",
+    "line": "violet",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jawaharlal-nehru-stadium",
+    "to": "jangpura",
+    "line": "violet",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jangpura",
+    "to": "lajpat-nagar",
+    "line": "violet",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "lajpat-nagar",
+    "to": "moolchand",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "moolchand",
+    "to": "kailash-colony",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kailash-colony",
+    "to": "nehru-place",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nehru-place",
+    "to": "kalkaji-mandir",
+    "line": "violet",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kalkaji-mandir",
+    "to": "govind-puri",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "govind-puri",
+    "to": "harkesh-nagar-okhla",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "harkesh-nagar-okhla",
+    "to": "jasola-apollo",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jasola-apollo",
+    "to": "sarita-vihar",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sarita-vihar",
+    "to": "mohan-estate",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mohan-estate",
+    "to": "tughlakabad-station",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "tughlakabad-station",
+    "to": "badarpur-border",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "badarpur-border",
+    "to": "sarai",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sarai",
+    "to": "nhpc-chowk",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nhpc-chowk",
+    "to": "mewala-maharajpur",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mewala-maharajpur",
+    "to": "sector-28",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-28",
+    "to": "badkal-mor",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "badkal-mor",
+    "to": "old-faridabad",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "old-faridabad",
+    "to": "neelam-chowk-ajronda",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "neelam-chowk-ajronda",
+    "to": "bata-chowk",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "bata-chowk",
+    "to": "escorts-mujesar",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "escorts-mujesar",
+    "to": "sant-surdas-sihi",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sant-surdas-sihi",
+    "to": "raja-nahar-singh",
+    "line": "violet",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "majlis-park",
+    "to": "azadpur",
+    "line": "pink",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "azadpur",
+    "to": "shalimar-bagh",
+    "line": "pink",
+    "distance_km": 2.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shalimar-bagh",
+    "to": "netaji-subhash-place",
+    "line": "pink",
+    "distance_km": 2.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "netaji-subhash-place",
+    "to": "shakurpur",
+    "line": "pink",
+    "distance_km": 3.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shakurpur",
+    "to": "punjabi-bagh-west",
+    "line": "pink",
+    "distance_km": 3.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "punjabi-bagh-west",
+    "to": "esi-basaidarapur",
+    "line": "pink",
+    "distance_km": 3.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "esi-basaidarapur",
+    "to": "rajouri-garden",
+    "line": "pink",
+    "distance_km": 3.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rajouri-garden",
+    "to": "mayapuri",
+    "line": "pink",
+    "distance_km": 2.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mayapuri",
+    "to": "naraina-vihar",
+    "line": "pink",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "naraina-vihar",
+    "to": "delhi-cantt",
+    "line": "pink",
+    "distance_km": 2.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "delhi-cantt",
+    "to": "durgabai-deshmukh-south-campus",
+    "line": "pink",
+    "distance_km": 2.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "durgabai-deshmukh-south-campus",
+    "to": "sir-m-vishweshwaraiah-moti-bagh",
+    "line": "pink",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sir-m-vishweshwaraiah-moti-bagh",
+    "to": "bhikaji-cama-place",
+    "line": "pink",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "bhikaji-cama-place",
+    "to": "sarojini-nagar",
+    "line": "pink",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sarojini-nagar",
+    "to": "dilli-haat-ina",
+    "line": "pink",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dilli-haat-ina",
+    "to": "south-extension",
+    "line": "pink",
+    "distance_km": 2.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "south-extension",
+    "to": "lajpat-nagar",
+    "line": "pink",
+    "distance_km": 2.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "lajpat-nagar",
+    "to": "vinobapuri",
+    "line": "pink",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "vinobapuri",
+    "to": "ashram",
+    "line": "pink",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ashram",
+    "to": "sarai-kale-khan-nizamuddin",
+    "line": "pink",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sarai-kale-khan-nizamuddin",
+    "to": "mayur-vihar-i",
+    "line": "pink",
+    "distance_km": 2.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mayur-vihar-i",
+    "to": "mayur-vihar-pocket-1",
+    "line": "pink",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mayur-vihar-pocket-1",
+    "to": "trilokpuri-sanjay-lake",
+    "line": "pink",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "trilokpuri-sanjay-lake",
+    "to": "east-vinod-nagar-mayur-vihar-ii",
+    "line": "pink",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "east-vinod-nagar-mayur-vihar-ii",
+    "to": "mandawali-west-vinod-nagar",
+    "line": "pink",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "mandawali-west-vinod-nagar",
+    "to": "ip-extension",
+    "line": "pink",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "ip-extension",
+    "to": "anand-vihar-isbt",
+    "line": "pink",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "anand-vihar-isbt",
+    "to": "karkarduma",
+    "line": "pink",
+    "distance_km": 1.5,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "karkarduma",
+    "to": "karkarduma-court",
+    "line": "pink",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "karkarduma-court",
+    "to": "krishna-nagar",
+    "line": "pink",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "krishna-nagar",
+    "to": "east-azad-nagar",
+    "line": "pink",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "east-azad-nagar",
+    "to": "welcome",
+    "line": "pink",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "welcome",
+    "to": "jaffrabad",
+    "line": "pink",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jaffrabad",
+    "to": "maujpur-babarpur",
+    "line": "pink",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "maujpur-babarpur",
+    "to": "gokulpuri",
+    "line": "pink",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "gokulpuri",
+    "to": "johri-enclave",
+    "line": "pink",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "johri-enclave",
+    "to": "shiv-vihar",
+    "line": "pink",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "janakpuri-west",
+    "to": "dabri-mor-janakpuri-south",
+    "line": "magenta",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dabri-mor-janakpuri-south",
+    "to": "dashrath-puri",
+    "line": "magenta",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dashrath-puri",
+    "to": "palam",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "palam",
+    "to": "sadar-bazar-cantonment",
+    "line": "magenta",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sadar-bazar-cantonment",
+    "to": "terminal-1-igi-airport",
+    "line": "magenta",
+    "distance_km": 2.3,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "terminal-1-igi-airport",
+    "to": "shankar-vihar",
+    "line": "magenta",
+    "distance_km": 2.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "shankar-vihar",
+    "to": "vasant-vihar",
+    "line": "magenta",
+    "distance_km": 2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "vasant-vihar",
+    "to": "munirka",
+    "line": "magenta",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "munirka",
+    "to": "rk-puram",
+    "line": "magenta",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "rk-puram",
+    "to": "iit",
+    "line": "magenta",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "iit",
+    "to": "hauz-khas",
+    "line": "magenta",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "hauz-khas",
+    "to": "panchsheel-park",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "panchsheel-park",
+    "to": "chirag-delhi",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "chirag-delhi",
+    "to": "greater-kailash",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "greater-kailash",
+    "to": "nehru-enclave",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nehru-enclave",
+    "to": "kalkaji-mandir",
+    "line": "magenta",
+    "distance_km": 1.9,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kalkaji-mandir",
+    "to": "okhla-nsic",
+    "line": "magenta",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "okhla-nsic",
+    "to": "sukhdev-vihar",
+    "line": "magenta",
+    "distance_km": 1.6,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sukhdev-vihar",
+    "to": "jamia-millia-islamia",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jamia-millia-islamia",
+    "to": "okhla-vihar",
+    "line": "magenta",
+    "distance_km": 1.7,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "okhla-vihar",
+    "to": "jasola-vihar-shaheen-bagh",
+    "line": "magenta",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "jasola-vihar-shaheen-bagh",
+    "to": "kalindi-kunj",
+    "line": "magenta",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "kalindi-kunj",
+    "to": "okhla-bird-sanctuary",
+    "line": "magenta",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "okhla-bird-sanctuary",
+    "to": "botanical-garden",
+    "line": "magenta",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka",
+    "to": "nangli",
+    "line": "grey",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nangli",
+    "to": "najafgarh",
+    "line": "grey",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "najafgarh",
+    "to": "dhansa-bus-stand",
+    "line": "grey",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "new-delhi",
+    "to": "shivaji-stadium",
+    "line": "airport",
+    "distance_km": 2.8,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "shivaji-stadium",
+    "to": "dhaula-kuan",
+    "line": "airport",
+    "distance_km": 3.8,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "dhaula-kuan",
+    "to": "delhi-aerocity",
+    "line": "airport",
+    "distance_km": 3.8,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "delhi-aerocity",
+    "to": "airport-t-3",
+    "line": "airport",
+    "distance_km": 3.8,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "airport-t-3",
+    "to": "dwarka-sector-21",
+    "line": "airport",
+    "distance_km": 3.8,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "dwarka-sector-21",
+    "to": "yashobhoomi-dwarka-sector-25",
+    "line": "airport",
+    "distance_km": 1.6,
+    "travel_time_min": 3,
+    "bidirectional": true
+  },
+  {
+    "from": "sikanderpur",
+    "to": "phase-2",
+    "line": "rapid-metro",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "phase-2",
+    "to": "belvedere-towers",
+    "line": "rapid-metro",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "belvedere-towers",
+    "to": "cyber-city",
+    "line": "rapid-metro",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "cyber-city",
+    "to": "moulsari-avenue",
+    "line": "rapid-metro",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "moulsari-avenue",
+    "to": "phase-3",
+    "line": "rapid-metro",
+    "distance_km": 1.1,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "phase-3",
+    "to": "phase-1",
+    "line": "rapid-metro",
+    "distance_km": 1.8,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "phase-1",
+    "to": "sector-42-43",
+    "line": "rapid-metro",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-42-43",
+    "to": "sector-53-54",
+    "line": "rapid-metro",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-53-54",
+    "to": "sector-54-chowk",
+    "line": "rapid-metro",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-54-chowk",
+    "to": "sector-55-56",
+    "line": "rapid-metro",
+    "distance_km": 1.2,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-51",
+    "to": "noida-sector-50",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "noida-sector-50",
+    "to": "sector-76",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-76",
+    "to": "sector-101",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-101",
+    "to": "sector-81",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-81",
+    "to": "nsez",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "nsez",
+    "to": "sector-83",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-83",
+    "to": "sector-137",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-137",
+    "to": "sector-142",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-142",
+    "to": "sector-143",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-143",
+    "to": "sector-144",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-144",
+    "to": "sector-145",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-145",
+    "to": "sector-146",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-146",
+    "to": "sector-147",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-147",
+    "to": "sector-148",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "sector-148",
+    "to": "knowledge-park-ii",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "knowledge-park-ii",
+    "to": "pari-chowk",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "pari-chowk",
+    "to": "alpha-1",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "alpha-1",
+    "to": "delta-1",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "delta-1",
+    "to": "gnida-office",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "gnida-office",
+    "to": "depot",
+    "line": "aqua",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": true
+  },
+  {
+    "from": "phase-3",
+    "to": "sikanderpur",
+    "line": "rapid-metro",
+    "distance_km": 1.4,
+    "travel_time_min": 2,
+    "bidirectional": false
+  },
+  {
+    "from": "noida-sector-52",
+    "to": "noida-sector-51",
+    "line": "interchange-walk",
+    "distance_km": 0.4,
+    "travel_time_min": 5,
+    "bidirectional": true
+  }
+]
