@@ -90,6 +90,7 @@ for (const tc of testCases) {
 console.log("PASS: All official DMRC Fare Slabs and Sunday Special rules matched.");
 
 // Test 4: Smart Card Off-peak discount
+console.log("\n--- TEST 4: Smart Card Off-Peak Discount ---");
 const offPeakFare = calculateFare(25.0, { isSundayOrHoliday: false, departureTime: "14:30" });
 console.log(`Smart Card Off-peak (25km): Token ₹${offPeakFare.tokenFare}, Smart Card ₹${offPeakFare.smartCardFare} (Discount: ${offPeakFare.discountAppliedPercent}%)`);
 if (offPeakFare.discountAppliedPercent !== 20) {
@@ -98,6 +99,40 @@ if (offPeakFare.discountAppliedPercent !== 20) {
 }
 console.log("PASS: Smart Card Off-Peak 20% discount correctly computed.");
 
+// Test 5: Airport Express Route (New Delhi -> Airport T-3)
+console.log("\n--- TEST 5: Airport Express Line (New Delhi -> Airport T-3) ---");
+const airportResult = metroGraph.findMultiRoutes("new-delhi", "airport-t-3");
+if (!airportResult || airportResult.routes.length === 0) {
+  console.error("FAIL: No route found between New Delhi and Airport T-3");
+  process.exit(1);
+}
+console.log(`From: ${airportResult.from.name} -> To: ${airportResult.to.name}`);
+console.log(`Stations: ${airportResult.routes[0].stationCount} | Interchanges: ${airportResult.routes[0].interchangeCount} | Lines: ${airportResult.routes[0].linesUsed.join(', ')}`);
+if (airportResult.routes[0].interchangeCount !== 0) {
+  console.error("FAIL: Direct Airport Express route should have 0 changes");
+  process.exit(1);
+}
+console.log("PASS: Direct Airport Express corridor verified.");
+
+// Test 6: NCR Cross-line Corridor (Rajiv Chowk -> Noida Sector 52)
+console.log("\n--- TEST 6: NCR Corridor (Rajiv Chowk -> Noida Sector 52) ---");
+const noidaResult = metroGraph.findMultiRoutes("rajiv-chowk", "noida-sector-52");
+if (!noidaResult || noidaResult.routes.length === 0) {
+  console.error("FAIL: No route found between Rajiv Chowk and Noida Sector 52");
+  process.exit(1);
+}
+console.log(`Stations: ${noidaResult.routes[0].stationCount} | Changes: ${noidaResult.routes[0].interchangeCount} | Fare: ₹${noidaResult.routes[0].fare.tokenFare}`);
+console.log("PASS: Rajiv Chowk to Noida Blue Line corridor verified.");
+
+// Test 7: Same Station Validation
+console.log("\n--- TEST 7: Same Station Validation ---");
+const sameResult = metroGraph.findMultiRoutes("welcome", "welcome");
+if (!sameResult || sameResult.routes.length !== 0) {
+  console.error("FAIL: Same station query should return empty routes array");
+  process.exit(1);
+}
+console.log("PASS: Same station query safely handled.");
+
 console.log("\n==========================================");
-console.log("ALL ENGINE TESTS PASSED SUCCESSFULLY! ✓");
+console.log("ALL 7 ENGINE TESTS PASSED SUCCESSFULLY! ✓");
 console.log("==========================================");

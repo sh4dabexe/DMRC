@@ -16,6 +16,7 @@ interface SidebarProps {
   activeTab: 'planner' | 'map' | 'fares' | 'timings' | 'saved';
   setActiveTab: (tab: 'planner' | 'map' | 'fares' | 'timings' | 'saved') => void;
   savedTripsCount: number;
+  onOpenAiAssistant?: () => void;
 }
 
 interface NavItem {
@@ -28,7 +29,8 @@ interface NavItem {
 export const Sidebar: React.FC<SidebarProps> = ({
   activeTab,
   setActiveTab,
-  savedTripsCount
+  savedTripsCount,
+  onOpenAiAssistant
 }) => {
   const navItems: NavItem[] = [
     { id: 'planner', label: 'Route Planner', icon: Navigation },
@@ -58,6 +60,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           </div>
         </div>
+
+        {/* AI Assistant Quick Banner */}
+        {onOpenAiAssistant && (
+          <div className="px-3 pt-3">
+            <button
+              type="button"
+              onClick={onOpenAiAssistant}
+              className="w-full p-2.5 rounded-xl bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 border border-purple-200/80 flex items-center justify-between text-left transition-all group"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-purple-950">AI Journey Helper</div>
+                  <div className="text-[10px] text-purple-700 font-medium">Hinglish / Natural intent</div>
+                </div>
+              </div>
+              <span className="text-xs text-purple-400 group-hover:text-purple-700 transition-colors">→</span>
+            </button>
+          </div>
+        )}
 
         {/* Navigation Links */}
         <nav className="p-3 space-y-1">

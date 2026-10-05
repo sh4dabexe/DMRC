@@ -10,6 +10,7 @@ import { InteractiveMetroMap } from '@/components/InteractiveMetroMap';
 import { FareCalculatorModal } from '@/components/FareCalculatorModal';
 import { TimingsModal } from '@/components/TimingsModal';
 import { SavedTripsModal } from '@/components/SavedTripsModal';
+import { AiAssistantModal } from '@/components/AiAssistantModal';
 import { Station, MetroRoute, RouteQueryResult } from '@/engine/types';
 import { 
   Sparkles, 
@@ -21,6 +22,8 @@ import {
   ArrowRight,
   ShieldCheck,
   Zap,
+  Share2,
+  Check,
   Info
 } from 'lucide-react';
 
@@ -31,11 +34,13 @@ export default function Home() {
   const [selectedRouteId, setSelectedRouteId] = useState<string>('route-1');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [copiedLink, setCopiedLink] = useState(false);
 
   // Modals
   const [showFareModal, setShowFareModal] = useState(false);
   const [showTimingsModal, setShowTimingsModal] = useState(false);
   const [showSavedModal, setShowSavedModal] = useState(false);
+  const [showAiModal, setShowAiModal] = useState(false);
 
   // Saved Trips in localStorage
   const [savedTrips, setSavedTrips] = useState<any[]>([]);
@@ -47,8 +52,13 @@ export default function Home() {
       .then(data => {
         if (data.stations) {
           setStations(data.stations);
-          // Auto search default Welcome -> Dwarka
-          handleSearch('welcome', 'dwarka', { isSunday: false, time: '10:00' });
+          // Check query parameters for shareable links
+          const params = new URLSearchParams(window.location.search);
+          const urlFrom = params.get('from') || 'welcome';
+          const urlTo = params.get('to') || 'dwarka';
+          const urlSun = params.get('isSunday') === 'true';
+          const urlTime = params.get('time') || '10:00';
+          handleSearch(urlFrom, urlTo, { isSunday: urlSun, time: urlTime });
         }
       })
       .catch(err => {
@@ -69,6 +79,10 @@ export default function Home() {
     setIsLoading(true);
     setErrorMsg(null);
     try {
+      // Update browser URL without reload
+      const newUrl = `/?from=${encodeURIComponent(fromId)}&to=${encodeURIComponent(toId)}&isSunday=${options.isSunday}&time=${encodeURIComponent(options.time)}`;
+      window.history.replaceState({}, '', newUrl);
+
       const url = `/api/routes?from=${encodeURIComponent(fromId)}&to=${encodeURIComponent(toId)}&isSunday=${options.isSunday}&time=${encodeURIComponent(options.time)}`;
       const res = await fetch(url);
       const data = await res.json();
@@ -87,6 +101,14 @@ export default function Home() {
       setQueryResult(null);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleCopyLink = () => {
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(window.location.href);
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 2500);
     }
   };
 
@@ -130,6 +152,7 @@ export default function Home() {
           else setActiveTab(tab);
         }}
         savedTripsCount={savedTrips.length}
+        onOpenAiAssistant={() => setShowAiModal(true)}
       />
 
       {/* Main Content Area */}
@@ -163,7 +186,7 @@ export default function Home() {
                 {/* Search Results Section */}
                 {queryResult && (
                   <div className="space-y-4 animate-in fade-in duration-200">
-                    {/* Header info badge */}
+                    {/* Header info badge with Share Button */}
                     <div className="bg-white rounded-2xl border border-[#E4E5E7] p-4 flex items-center justify-between shadow-xs">
                       <div>
                         <div className="flex items-center gap-2">
@@ -183,13 +206,34 @@ export default function Home() {
                         </p>
                       </div>
 
-                      <div className="text-right">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block">
-                          Shortest Baseline
-                        </span>
-                        <span className="text-sm font-extrabold text-neutral-900">
-                          {queryResult.minimumStations} Stations
-                        </span>
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={handleCopyLink}
+                          className="px-2.5 py-1.5 rounded-xl border border-neutral-200 bg-neutral-50 hover:bg-neutral-100 text-xs font-semibold text-neutral-700 flex items-center gap-1.5 transition-all"
+                          title="Share route link"
+                        >
+                          {copiedLink ? (
+                            <>
+                              <Check className="w-3.5 h-3.5 text-emerald-600" />
+                              <span className="text-emerald-700">Link Copied!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Share2 className="w-3.5 h-3.5 text-neutral-500" />
+                              <span className="hidden sm:inline">Share</span>
+                            </>
+                          )}
+                        </button>
+
+                        <div className="text-right pl-2 border-l border-neutral-100">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block">
+                            Shortest
+                          </span>
+                          <span className="text-sm font-extrabold text-neutral-900">
+                            {queryResult.minimumStations} stn
+                          </span>
+                        </div>
                       </div>
                     </div>
 
@@ -294,6 +338,14 @@ export default function Home() {
           </button>
           <button
             type="button"
+            onClick={() => setShowAiModal(true)}
+            className="flex flex-col items-center gap-1 text-[10px] font-semibold text-purple-700"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>AI Helper</span>
+          </button>
+          <button
+            type="button"
             onClick={() => setShowFareModal(true)}
             className="flex flex-col items-center gap-1 text-[10px] font-semibold text-neutral-500 hover:text-black"
           >
@@ -337,6 +389,12 @@ export default function Home() {
         savedTrips={savedTrips}
         onRemoveTrip={handleRemoveTrip}
         onLoadTrip={(fromId, toId) => handleSearch(fromId, toId, { isSunday: false, time: '10:00' })}
+      />
+
+      <AiAssistantModal
+        isOpen={showAiModal}
+        onClose={() => setShowAiModal(false)}
+        onApplyRoute={(fromId, toId) => handleSearch(fromId, toId, { isSunday: false, time: '10:00' })}
       />
     </div>
   );
