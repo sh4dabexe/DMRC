@@ -1,16 +1,23 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { 
   ZoomIn, 
   ZoomOut, 
   RotateCcw, 
   Download,
   Layers, 
-  FileText,
-  MapPin,
-  Sparkles,
-  Maximize2
+  FileText, 
+  MapPin, 
+  Maximize2, 
+  Minimize2,
+  Search,
+  X,
+  Navigation,
+  ArrowRight,
+  Info,
+  Compass,
+  Check
 } from 'lucide-react';
 import { Station, Line, MetroRoute } from '@/engine/types';
 import linesData from '@/data/lines.json';
@@ -19,28 +26,42 @@ interface InteractiveMetroMapProps {
   stations: Station[];
   selectedRoute?: MetroRoute | null;
   onSelectStation?: (station: Station, type: 'from' | 'to') => void;
+  isFullView?: boolean;
+  initialFromId?: string;
+  initialToId?: string;
+  onPlanTrip?: (fromId: string, toId: string) => void;
+  onOpenPlanner?: () => void;
+  onExpandFullMap?: () => void;
 }
 
 export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   stations,
   selectedRoute,
-  onSelectStation
+  onSelectStation,
+  isFullView = false,
+  initialFromId = '',
+  initialToId = '',
+  onPlanTrip,
+  onOpenPlanner,
+  onExpandFullMap
 }) => {
+  const mapWrapperRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfContainerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  // View Mode: 'vector' (SVG interactive route map) vs 'pdf' (Official DMRC Schematic Map from Metro.pdf)
+  // View Mode: 'vector' (SVG interactive route map) vs 'pdf' (Official DMRC Schematic Map)
   const [viewMode, setViewMode] = useState<'vector' | 'pdf'>('vector');
 
-  // Vector Map Pan & Zoom - Centered and slightly zoomed in by default
-  const [scale, setScale] = useState(1.25);
+  // Vector Map Pan & Zoom
+  const defaultScale = isFullView ? 1.35 : 1.25;
+  const [scale, setScale] = useState(defaultScale);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   // PDF Map Pan & Zoom
-  const [pdfScale, setPdfScale] = useState(1);
+  const [pdfScale, setPdfScale] = useState(isFullView ? 1.15 : 1.0);
   const [pdfPan, setPdfPan] = useState({ x: 0, y: 0 });
   const [isPdfDragging, setIsPdfDragging] = useState(false);
   const [pdfDragStart, setPdfDragStart] = useState({ x: 0, y: 0 });
@@ -48,11 +69,31 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   // Filter lines in vector mode
   const [activeLineFilter, setActiveLineFilter] = useState<string | null>(null);
 
-  // Hovered station tooltip
+  // Hovered / Selected station
   const [hoveredStation, setHoveredStation] = useState<Station | null>(null);
+  const [focusedStationId, setFocusedStationId] = useState<string | null>(null);
+
+  // Search station in map
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Fullscreen
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Legend visibility
+  const [showLegend, setShowLegend] = useState(false);
+
+  // Staged departure and destination for map routing
+  const [mapFromId, setMapFromId] = useState<string>(initialFromId);
+  const [mapToId, setMapToId] = useState<string>(initialToId);
+
+  useEffect(() => {
+    if (initialFromId) setMapFromId(initialFromId);
+    if (initialToId) setMapToId(initialToId);
+  }, [initialFromId, initialToId]);
 
   // Map station lookup
-  const stationMap = React.useMemo(() => {
+  const stationMap = useMemo(() => {
     const map = new Map<string, Station>();
     for (const s of stations) {
       map.set(s.id, s);
@@ -61,7 +102,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   }, [stations]);
 
   // Group stations into line polylines in EXACT sequential order using line.stationIds
-  const linePolylines = React.useMemo(() => {
+  const linePolylines = useMemo(() => {
     const polylines: Array<{ line: Line; points: Station[] }> = [];
 
     for (const line of linesData as (Line & { stationIds?: string[] })[]) {
@@ -83,28 +124,75 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
     return polylines;
   }, [stations, stationMap]);
 
-  // Handle Zoom In / Out / Reset
+  // Search matching stations
+  const matchingStations = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase().trim();
+    return stations.filter(s => 
+      s.name.toLowerCase().includes(q) ||
+      s.aliases?.some(a => a.toLowerCase().includes(q))
+    ).slice(0, 7);
+  }, [stations, searchQuery]);
+
+  // Zoom handlers
   const handleZoom = (delta: number) => {
     if (viewMode === 'vector') {
-      setScale(prev => Math.max(0.45, Math.min(3.2, prev + delta)));
+      setScale(prev => Math.max(0.45, Math.min(3.6, prev + delta)));
     } else {
-      setPdfScale(prev => Math.max(0.5, Math.min(4.0, prev + delta)));
+      setPdfScale(prev => Math.max(0.5, Math.min(4.5, prev + delta)));
     }
   };
 
   const handleReset = () => {
     if (viewMode === 'vector') {
-      setScale(1.25);
+      setScale(defaultScale);
       setPan({ x: 0, y: 0 });
+      setFocusedStationId(null);
     } else {
-      setPdfScale(1);
+      setPdfScale(isFullView ? 1.15 : 1.0);
       setPdfPan({ x: 0, y: 0 });
     }
   };
 
-  // Fit route into viewport smoothly centered when selectedRoute changes in vector mode
+  // Fullscreen toggle
+  const toggleFullscreen = () => {
+    if (!mapWrapperRef.current) return;
+    if (!document.fullscreenElement) {
+      mapWrapperRef.current.requestFullscreen().then(() => setIsFullscreen(true)).catch(() => {});
+    } else {
+      document.exitFullscreen().then(() => setIsFullscreen(false)).catch(() => {});
+    }
+  };
+
   useEffect(() => {
-    if (viewMode === 'vector' && selectedRoute && selectedRoute.stationSequence.length > 0) {
+    const onFsChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', onFsChange);
+    return () => document.removeEventListener('fullscreenchange', onFsChange);
+  }, []);
+
+  // Center on station
+  const focusOnStation = (station: Station) => {
+    const container = containerRef.current;
+    const width = container?.clientWidth || 800;
+    const height = container?.clientHeight || 600;
+    const coordScale = Math.min(width / 1350, height / 1200);
+    const targetScale = isFullView ? 2.1 : 1.8;
+
+    const dx = -(station.x - 625) * coordScale * targetScale;
+    const dy = -(station.y - 650) * coordScale * targetScale;
+
+    setPan({ x: Math.round(dx), y: Math.round(dy) });
+    setScale(targetScale);
+    setHoveredStation(station);
+    setFocusedStationId(station.id);
+    setIsSearchOpen(false);
+  };
+
+  // Fit route into viewport smoothly centered when selectedRoute changes in vector mode
+  const fitRoute = () => {
+    if (selectedRoute && selectedRoute.stationSequence.length > 0) {
       const xs = selectedRoute.stationSequence.map(s => s.x);
       const ys = selectedRoute.stationSequence.map(s => s.y);
       const minX = Math.min(...xs);
@@ -115,24 +203,26 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
       const midX = (minX + maxX) / 2;
       const midY = (minY + maxY) / 2;
 
-      // Network center reference is at (625, 650)
-      const netCenterX = 625;
-      const netCenterY = 650;
-
       const container = containerRef.current;
-      const width = container?.clientWidth || 500;
-      const height = container?.clientHeight || 550;
+      const width = container?.clientWidth || 700;
+      const height = container?.clientHeight || 650;
       const coordScale = Math.min(width / 1350, height / 1200);
 
-      const targetScale = 1.35;
-      const dx = -(midX - netCenterX) * coordScale * targetScale;
-      const dy = -(midY - netCenterY) * coordScale * targetScale;
+      const targetScale = isFullView ? 1.5 : 1.35;
+      const dx = -(midX - 625) * coordScale * targetScale;
+      const dy = -(midY - 650) * coordScale * targetScale;
 
       setPan({
         x: Math.round(dx),
         y: Math.round(dy)
       });
       setScale(targetScale);
+    }
+  };
+
+  useEffect(() => {
+    if (viewMode === 'vector' && selectedRoute && selectedRoute.stationSequence.length > 0) {
+      fitRoute();
     }
   }, [selectedRoute, viewMode]);
 
@@ -155,7 +245,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
     setIsDragging(false);
   };
 
-  // Non-passive wheel listeners to zoom map without scrolling the outer page
+  // Non-passive wheel listeners to zoom map without scrolling outer page
   useEffect(() => {
     const el = containerRef.current;
     if (!el || viewMode !== 'vector') return;
@@ -163,8 +253,8 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
     const onVectorWheel = (e: WheelEvent) => {
       e.preventDefault();
       e.stopPropagation();
-      const zoomDelta = e.deltaY < 0 ? 0.12 : -0.12;
-      setScale(prev => Math.max(0.35, Math.min(2.8, prev + zoomDelta)));
+      const zoomDelta = e.deltaY < 0 ? 0.14 : -0.14;
+      setScale(prev => Math.max(0.4, Math.min(3.5, prev + zoomDelta)));
     };
 
     el.addEventListener('wheel', onVectorWheel, { passive: false });
@@ -181,7 +271,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
       e.preventDefault();
       e.stopPropagation();
       const zoomDelta = e.deltaY < 0 ? 0.18 : -0.18;
-      setPdfScale(prev => Math.max(0.5, Math.min(4.0, prev + zoomDelta)));
+      setPdfScale(prev => Math.max(0.5, Math.min(4.5, prev + zoomDelta)));
     };
 
     el.addEventListener('wheel', onPdfWheel, { passive: false });
@@ -210,54 +300,132 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
   };
 
   // Active route station IDs set for quick styling
-  const routeStationIds = React.useMemo(() => {
+  const routeStationIds = useMemo(() => {
     if (!selectedRoute) return new Set<string>();
     return new Set(selectedRoute.stationSequence.map(s => s.id));
   }, [selectedRoute]);
 
-  const routeLinesUsed = React.useMemo(() => {
+  const routeLinesUsed = useMemo(() => {
     if (!selectedRoute) return new Set<string>();
     return new Set(selectedRoute.linesUsed);
   }, [selectedRoute]);
 
-  return (
-    <div className="relative w-full h-[540px] md:h-full min-h-[520px] bg-[#FAFBFB] rounded-2xl border border-[#E4E5E7] overflow-hidden flex flex-col select-none">
-      {/* Top Map Control Bar */}
-      <div className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between pointer-events-none gap-2">
-        {/* View Mode Switcher */}
-        <div className="pointer-events-auto flex items-center bg-white/95 backdrop-blur-md p-1 rounded-xl border border-neutral-200 shadow-sm">
-          <button
-            type="button"
-            onClick={() => setViewMode('vector')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-              viewMode === 'vector'
-                ? 'bg-neutral-900 text-white shadow-xs'
-                : 'text-neutral-600 hover:text-neutral-900'
-            }`}
-          >
-            <Layers className="w-3.5 h-3.5" />
-            <span>Route Map</span>
-          </button>
+  const fromStation = mapFromId ? stationMap.get(mapFromId) : null;
+  const toStation = mapToId ? stationMap.get(mapToId) : null;
 
-          <button
-            type="button"
-            onClick={() => setViewMode('pdf')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
-              viewMode === 'pdf'
-                ? 'bg-neutral-900 text-white shadow-xs'
-                : 'text-neutral-600 hover:text-neutral-900'
-            }`}
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span>Official DMRC Map</span>
-          </button>
+  return (
+    <div 
+      ref={mapWrapperRef}
+      className={`relative w-full ${isFullView ? 'h-full flex-1 min-h-[550px]' : 'h-full min-h-[500px]'} bg-[#FAFBFB] rounded-2xl border border-[#E4E5E7] overflow-hidden flex flex-col select-none shadow-xs`}
+    >
+      {/* Top Map Control Bar */}
+      <div className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between pointer-events-none gap-2 flex-wrap sm:flex-nowrap">
+        
+        {/* Left: View Mode Switcher & Station Search */}
+        <div className="pointer-events-auto flex items-center gap-2">
+          {/* View Mode Toggle */}
+          <div className="flex items-center bg-white/95 backdrop-blur-md p-1 rounded-xl border border-neutral-200 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setViewMode('vector')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                viewMode === 'vector'
+                  ? 'bg-neutral-900 text-white shadow-xs'
+                  : 'text-neutral-600 hover:text-neutral-900'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>Interactive Map</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setViewMode('pdf')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                viewMode === 'pdf'
+                  ? 'bg-neutral-900 text-white shadow-xs'
+                  : 'text-neutral-600 hover:text-neutral-900'
+              }`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Official DMRC Map</span>
+            </button>
+          </div>
+
+          {/* Station Quick Search (Especially useful in Full View!) */}
+          {viewMode === 'vector' && (
+            <div className="relative">
+              <div className="flex items-center bg-white/95 backdrop-blur-md rounded-xl border border-neutral-200 shadow-sm px-2.5 py-1.5 w-48 md:w-64">
+                <Search className="w-3.5 h-3.5 text-neutral-400 shrink-0 mr-1.5" />
+                <input
+                  type="text"
+                  placeholder="Find station on map..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setIsSearchOpen(true);
+                  }}
+                  onFocus={() => setIsSearchOpen(true)}
+                  className="w-full text-xs bg-transparent border-none outline-none text-neutral-800 placeholder-neutral-400 font-medium"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setIsSearchOpen(false);
+                    }}
+                    className="text-neutral-400 hover:text-black ml-1"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+
+              {/* Search dropdown results */}
+              {isSearchOpen && matchingStations.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1.5 bg-white/95 backdrop-blur-md rounded-xl border border-neutral-200 shadow-xl overflow-hidden z-40 max-h-60 overflow-y-auto animate-in fade-in zoom-in-95 duration-100">
+                  <div className="p-1">
+                    {matchingStations.map(st => (
+                      <button
+                        key={st.id}
+                        type="button"
+                        onClick={() => focusOnStation(st)}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-neutral-100 flex items-center justify-between text-xs transition-colors group"
+                      >
+                        <div>
+                          <div className="font-semibold text-neutral-900 group-hover:text-black">{st.name}</div>
+                          <div className="flex gap-1 mt-0.5">
+                            {st.lines.map(lId => {
+                              const line = linesData.find(l => l.id === lId);
+                              return (
+                                <span
+                                  key={lId}
+                                  className="text-[9px] font-bold px-1.5 py-0.2 rounded text-white"
+                                  style={{ backgroundColor: line?.color || '#555' }}
+                                >
+                                  {line?.name.replace('Line', '').trim()}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                        <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* Zoom & Action Controls */}
+        {/* Right: Zoom & Action Controls */}
         <div className="pointer-events-auto flex items-center gap-1 bg-white/95 backdrop-blur-md p-1 rounded-xl border border-neutral-200 shadow-sm">
+          {/* Zoom controls */}
           <button
             type="button"
-            onClick={() => handleZoom(viewMode === 'vector' ? 0.15 : 0.25)}
+            onClick={() => handleZoom(viewMode === 'vector' ? 0.2 : 0.25)}
             title="Zoom In"
             className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-black transition-all"
           >
@@ -265,21 +433,78 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
           </button>
           <button
             type="button"
-            onClick={() => handleZoom(viewMode === 'vector' ? -0.15 : -0.25)}
+            onClick={() => handleZoom(viewMode === 'vector' ? -0.2 : -0.25)}
             title="Zoom Out"
             className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-black transition-all"
           >
             <ZoomOut className="w-4 h-4" />
           </button>
+          
           <div className="h-4 w-px bg-neutral-200 mx-0.5" />
+
+          {/* Reset View */}
           <button
             type="button"
             onClick={handleReset}
-            title="Reset View"
+            title="Reset to Full Network"
             className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-black transition-all"
           >
             <RotateCcw className="w-4 h-4" />
           </button>
+
+          {/* Fit Route Button (if route exists in vector mode) */}
+          {viewMode === 'vector' && selectedRoute && (
+            <button
+              type="button"
+              onClick={fitRoute}
+              title="Focus on Active Route"
+              className="p-1.5 rounded-lg hover:bg-neutral-100 text-emerald-700 hover:text-emerald-900 transition-all"
+            >
+              <Compass className="w-4 h-4" />
+            </button>
+          )}
+
+          {/* Legend toggle */}
+          {viewMode === 'vector' && (
+            <button
+              type="button"
+              onClick={() => setShowLegend(prev => !prev)}
+              title="Toggle Metro Legend"
+              className={`p-1.5 rounded-lg transition-all ${
+                showLegend 
+                  ? 'bg-neutral-900 text-white' 
+                  : 'hover:bg-neutral-100 text-neutral-700 hover:text-black'
+              }`}
+            >
+              <Info className="w-4 h-4" />
+            </button>
+          )}
+
+          {/* Expand to Full Map (when in compact view) */}
+          {!isFullView && onExpandFullMap && (
+            <button
+              type="button"
+              onClick={onExpandFullMap}
+              title="Expand to Full Map View"
+              className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-black transition-all"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+          )}
+
+          {/* Fullscreen toggle (in full view) */}
+          {isFullView && (
+            <button
+              type="button"
+              onClick={toggleFullscreen}
+              title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+              className="p-1.5 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-black transition-all"
+            >
+              {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+            </button>
+          )}
+
+          {/* Download Official PDF */}
           {viewMode === 'pdf' && (
             <>
               <div className="h-4 w-px bg-neutral-200 mx-0.5" />
@@ -310,7 +535,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
                   : 'bg-white/90 backdrop-blur-md text-neutral-600 border-neutral-200 hover:bg-white'
               }`}
             >
-              All Lines
+              All Lines (12)
             </button>
 
             {linesData.filter(l => l.id !== 'interchange-walk').map((line) => {
@@ -320,7 +545,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
                   key={line.id}
                   type="button"
                   onClick={() => setActiveLineFilter(isFilterActive ? null : line.id)}
-                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all shrink-0 border flex items-center gap-1.5 ${
+                  className={`px-2.5 py-1 rounded-lg text-[10px] font-bold transition-all shrink-0 border flex items-center gap-1.5 ${
                     isFilterActive
                       ? 'bg-neutral-900 text-white border-neutral-900 shadow-xs'
                       : 'bg-white/90 backdrop-blur-md text-neutral-700 border-neutral-200 hover:bg-white'
@@ -446,6 +671,7 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
                 const isOrigin = selectedRoute && selectedRoute.stationSequence[0]?.id === station.id;
                 const isDestination = selectedRoute && selectedRoute.stationSequence[selectedRoute.stationSequence.length - 1]?.id === station.id;
                 const isInterchange = station.lines.length > 1;
+                const isFocused = focusedStationId === station.id;
 
                 const isMuted = selectedRoute
                   ? !isRouteStation
@@ -457,9 +683,33 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
                     transform={`translate(${station.x}, ${station.y})`}
                     opacity={isMuted ? 0.22 : 1}
                     className="cursor-pointer transition-all duration-200 group"
-                    onClick={() => setHoveredStation(station)}
+                    onClick={() => {
+                      setHoveredStation(station);
+                      setFocusedStationId(station.id);
+                    }}
                     onMouseEnter={() => setHoveredStation(station)}
                   >
+                    {/* Focused Station Beacon */}
+                    {isFocused && (
+                      <>
+                        <circle
+                          r={16}
+                          fill="none"
+                          stroke="#2563EB"
+                          strokeWidth={2}
+                          className="animate-ping"
+                          opacity={0.65}
+                        />
+                        <circle
+                          r={13}
+                          fill="#3B82F6"
+                          fillOpacity={0.2}
+                          stroke="#2563EB"
+                          strokeWidth={2}
+                        />
+                      </>
+                    )}
+
                     {/* Interchange Outer Concentric Ring */}
                     {isInterchange && (
                       <circle
@@ -479,13 +729,13 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
                     />
 
                     {/* Station Labels */}
-                    {(isRouteStation || isInterchange || scale > 1.25) && (
+                    {(isRouteStation || isInterchange || isFocused || scale > 1.25) && (
                       <text
                         x={9}
                         y={3.5}
                         fontSize={isOrigin || isDestination ? 12 : isInterchange ? 9.5 : 7.5}
-                        fontWeight={isOrigin || isDestination || isRouteStation ? 'bold' : 'normal'}
-                        fill={isOrigin ? '#065F46' : isDestination ? '#991B1B' : '#1F2937'}
+                        fontWeight={isOrigin || isDestination || isRouteStation || isFocused ? 'bold' : 'normal'}
+                        fill={isOrigin ? '#065F46' : isDestination ? '#991B1B' : isFocused ? '#1D4ED8' : '#1F2937'}
                         className="pointer-events-none select-none"
                         style={{ textShadow: '0 0 3px #FFFFFF, 0 0 3px #FFFFFF' }}
                       >
@@ -497,66 +747,187 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
               })}
             </svg>
 
-            {/* Hovered Station Tooltip Modal */}
+            {/* Hovered Station Info Card Modal / Popover */}
             {hoveredStation && (
-              <div className="absolute top-14 left-4 z-30 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-neutral-200 shadow-lg max-w-xs animate-in fade-in zoom-in-95 duration-150">
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="font-bold text-sm text-neutral-900">{hoveredStation.name}</span>
+              <div className="absolute top-16 left-4 z-30 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-neutral-200 shadow-xl max-w-xs animate-in fade-in zoom-in-95 duration-150">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-neutral-600" />
+                    <span className="font-bold text-sm text-neutral-900">{hoveredStation.name}</span>
+                  </div>
                   <button
                     type="button"
-                    onClick={() => setHoveredStation(null)}
-                    className="text-neutral-400 hover:text-black text-xs font-bold px-1"
+                    onClick={() => {
+                      setHoveredStation(null);
+                      setFocusedStationId(null);
+                    }}
+                    className="text-neutral-400 hover:text-black text-xs font-bold p-1 rounded-lg hover:bg-neutral-100"
                   >
                     ✕
                   </button>
                 </div>
 
-                <div className="flex flex-wrap gap-1 mb-2.5">
+                <div className="flex flex-wrap gap-1 mb-3">
                   {hoveredStation.lines.map(lineId => {
                     const l = linesData.find(x => x.id === lineId);
                     return (
                       <span
                         key={lineId}
-                        className="text-[10px] font-bold px-2 py-0.5 rounded text-white"
+                        className="text-[10px] font-bold px-2 py-0.5 rounded text-white shadow-xs"
                         style={{ backgroundColor: l?.color || '#333' }}
                       >
                         {l?.name || lineId}
                       </span>
                     );
                   })}
+                  {hoveredStation.lines.length > 1 && (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 border border-neutral-200">
+                      Interchange Station
+                    </span>
+                  )}
                 </div>
 
-                {onSelectStation && (
-                  <div className="flex gap-2 pt-1 border-t border-neutral-100">
+                <div className="space-y-1.5 pt-1 border-t border-neutral-100">
+                  <div className="flex gap-2">
                     <button
                       type="button"
                       onClick={() => {
-                        onSelectStation(hoveredStation, 'from');
-                        setHoveredStation(null);
+                        setMapFromId(hoveredStation.id);
+                        onSelectStation?.(hoveredStation, 'from');
                       }}
-                      className="flex-1 py-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-semibold rounded-lg transition-all"
+                      className={`flex-1 py-1.5 text-xs font-semibold rounded-xl border transition-all ${
+                        mapFromId === hoveredStation.id
+                          ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
+                          : 'bg-neutral-50 hover:bg-neutral-100 border-neutral-200 text-neutral-700'
+                      }`}
                     >
-                      Set Departure
+                      {mapFromId === hoveredStation.id ? '✓ Departure Set' : 'Set as Departure'}
                     </button>
                     <button
                       type="button"
                       onClick={() => {
-                        onSelectStation(hoveredStation, 'to');
-                        setHoveredStation(null);
+                        setMapToId(hoveredStation.id);
+                        onSelectStation?.(hoveredStation, 'to');
                       }}
-                      className="flex-1 py-1 bg-neutral-900 hover:bg-black text-white text-xs font-semibold rounded-lg transition-all"
+                      className={`flex-1 py-1.5 text-xs font-semibold rounded-xl border transition-all ${
+                        mapToId === hoveredStation.id
+                          ? 'bg-blue-50 border-blue-300 text-blue-800'
+                          : 'bg-neutral-900 hover:bg-black border-neutral-900 text-white'
+                      }`}
                     >
-                      Set Destination
+                      {mapToId === hoveredStation.id ? '✓ Destination Set' : 'Set as Destination'}
                     </button>
                   </div>
-                )}
+
+                  {/* If both departure and destination are set, show Plan Journey button */}
+                  {mapFromId && mapToId && mapFromId !== mapToId && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onPlanTrip?.(mapFromId, mapToId);
+                      }}
+                      className="w-full py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs rounded-xl shadow-xs flex items-center justify-center gap-1.5 transition-all mt-2"
+                    >
+                      <Navigation className="w-3.5 h-3.5" />
+                      <span>Plan Journey from {stationMap.get(mapFromId)?.name.split(' ')[0]} ➔ {stationMap.get(mapToId)?.name.split(' ')[0]}</span>
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Metro Map Legend Drawer / Overlay */}
+            {showLegend && (
+              <div className="absolute top-16 right-4 z-30 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-neutral-200 shadow-xl max-w-xs animate-in fade-in zoom-in-95 duration-150">
+                <div className="flex items-center justify-between mb-2 pb-1 border-b border-neutral-100">
+                  <span className="font-bold text-xs text-neutral-900 uppercase tracking-wider">Network Legend</span>
+                  <button
+                    type="button"
+                    onClick={() => setShowLegend(false)}
+                    className="text-neutral-400 hover:text-black text-xs font-bold p-1 rounded-lg hover:bg-neutral-100"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3.5 h-3.5 rounded-full border-2 border-black bg-white flex items-center justify-center">
+                      <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                    </span>
+                    <span className="text-neutral-700">Interchange Station</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full border border-neutral-600 bg-white" />
+                    <span className="text-neutral-700">Regular Station</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <span className="w-4 h-1.5 rounded bg-sky-300" />
+                    <span className="text-neutral-700">Yamuna River</span>
+                  </div>
+
+                  <div className="pt-2 border-t border-neutral-100">
+                    <div className="font-semibold text-[11px] text-neutral-500 mb-1.5">Metro Lines (12)</div>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {linesData.filter(l => l.id !== 'interchange-walk').map(l => (
+                        <div key={l.id} className="flex items-center gap-1.5 text-[11px] text-neutral-700">
+                          <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: l.color }} />
+                          <span className="truncate">{l.name.replace('Line', '')}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Active Selected Route Float Bar (in full view) */}
+            {isFullView && selectedRoute && (
+              <div className="absolute bottom-14 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-auto z-20 pointer-events-auto">
+                <div className="bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-neutral-200 shadow-xl flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <div>
+                      <div className="text-xs font-bold text-neutral-900 flex items-center gap-1.5">
+                        <span>{selectedRoute.stationSequence[0]?.name}</span>
+                        <ArrowRight className="w-3 h-3 text-neutral-400" />
+                        <span>{selectedRoute.stationSequence[selectedRoute.stationSequence.length - 1]?.name}</span>
+                      </div>
+                      <div className="text-[11px] text-neutral-500 font-medium">
+                        {selectedRoute.stationCount} stations • {selectedRoute.interchangeCount} transfer{selectedRoute.interchangeCount === 1 ? '' : 's'} • ₹{selectedRoute.fare.tokenFare} • ~{selectedRoute.travel_time_min} mins
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={fitRoute}
+                      className="px-2.5 py-1.5 rounded-xl border border-neutral-200 bg-neutral-50 hover:bg-neutral-100 text-xs font-semibold text-neutral-700 transition-all"
+                    >
+                      Focus
+                    </button>
+                    {onOpenPlanner && (
+                      <button
+                        type="button"
+                        onClick={onOpenPlanner}
+                        className="px-3 py-1.5 rounded-xl bg-neutral-900 hover:bg-black text-xs font-bold text-white transition-all flex items-center gap-1"
+                      >
+                        <span>Directions</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
             )}
           </div>
         </>
       )}
 
-      {/* VIEW MODE 2: Official DMRC Network Map (Metro.pdf) */}
+      {/* VIEW MODE 2: Official DMRC Network Map (Metro.pdf / webp) */}
       {viewMode === 'pdf' && (
         <div
           ref={pdfContainerRef}
@@ -576,14 +947,15 @@ export const InteractiveMetroMap: React.FC<InteractiveMetroMapProps> = ({
             <img
               src="/metro-map.webp"
               alt="Official Delhi-NCR Metro Network Map"
-              className="max-w-none w-[1100px] md:w-[1400px] h-auto object-contain shadow-2xl rounded-xl"
+              className="max-w-none w-[1100px] md:w-[1500px] h-auto object-contain shadow-2xl rounded-xl"
               draggable={false}
             />
           </div>
 
-          {/* DMRC Official attribution watermark */}
-          <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-neutral-200 shadow-sm text-xs font-semibold text-neutral-700 pointer-events-none">
-            Official DMRC Network Map • Drag to Pan • Scroll to Zoom
+          {/* DMRC Official attribution watermark & instructions */}
+          <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-neutral-200 shadow-sm text-xs font-semibold text-neutral-700 pointer-events-none flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span>Official DMRC Network Map • Drag to Pan • Scroll to Zoom</span>
           </div>
         </div>
       )}

@@ -48,7 +48,10 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
             {activeTab === 'saved' && 'Saved Commute Routes'}
           </h2>
           <p className="text-xs text-neutral-500 font-medium">
-            Discover least-station paths & alternative interchange options
+            {activeTab === 'map' 
+              ? 'Explore 280+ stations, filter lines, search routes, or view official high-res schematics' 
+              : 'Discover least-station paths & alternative interchange options'
+            }
           </p>
         </div>
       </div>
